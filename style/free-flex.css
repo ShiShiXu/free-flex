@@ -57,7 +57,6 @@
     flex-direction: column;
 }
 
-
 .flex-row-reverse { /* flex row 行内容反转 */
     flex-direction: row-reverse;
 }
@@ -65,7 +64,6 @@
 .flex-col-reverse { /* flex column 列内容反转 */
     flex-direction: column-reverse;
 }
-
 
 .flex-nowrap { /* flex容器 不换行 */
     flex-wrap: nowrap;
@@ -78,7 +76,6 @@
 .flex-wrap-reverse { /* flex容器 并倒序 */
     flex-wrap: wrap-reverse;
 }
-
 
 .both-center { /* 垂直和水平居中，写在父容器身上 */
   -webkit-box-align: center;
