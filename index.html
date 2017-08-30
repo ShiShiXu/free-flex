@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html >
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta content="yes" name="apple-mobile-web-app-capable">
+      <meta name="viewport"
+            content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+      <link rel="stylesheet" href="./style/free-flex.css">
+      <link rel="stylesheet" href="./style/h5.css">
+      <title>Free布局</title>
+		<style>
+
+			* {
+				color: #333;
+				font-size: 14px;
+			}
+
+			body {
+				padding: 16px;
+			}
+
+			.title-guide {
+				font-size: 16px;
+				font-weight: bold;
+				padding-left: 10px;
+				text-align: center;
+			}
+
+			hr {
+				box-sizing: content-box;
+				height: 0;
+				margin: 15px 0;
+				border: 0;
+				border-top: 1px solid #e5e5e5;
+				transform: scaleY(.5);
+			}
+
+			code {
+				font-size: 12px;
+				font-family: Consolas,monospace,serif;
+				color: #d05;
+				border-radius: 3px;
+				background: #fafafa;
+			}
+
+			.box {
+				position: relative;
+				padding: 10px 0 40px 0;
+			}
+
+			.box::after {
+				position: absolute;
+				content: " ";
+				left: 0;
+				bottom: 20px;
+				width: 100%;
+				height: 1px;
+				background-color: #e5e5e5;
+				transform: scaleY(.5);
+			}
+
+			.box > div > code {
+				font-size: 12px;
+				font-family: Consolas,monospace,serif;
+				color: #d05;
+				white-space: nowrap;
+				padding: 0 2px;
+				border-radius: 3px;
+				background: #fafafa;
+			}
+
+			.tips {
+				position: relative;
+				line-height: 20px;
+				margin: 4px 10px;
+				padding: 8px 10px;
+				background: #fafafa;
+				border-left: 4px solid #1FA2D6 ;
+			}
+
+			.preview {
+				margin-top: 20px;
+			}
+
+			.preview > div:nth-child(2), .preview > div:nth-child(3) {
+				margin: 6px 10px;
+			}
+
+			.preview > div:nth-child(2) > div:nth-child(1) {
+				/*background-color: #fbd8ba;*/
+			}
+
+			.preview > div:nth-child(2) > div:nth-child(2) {
+				/*background-color: #dcf1da;*/
+			}
+
+			.preview > div:nth-child(2) > div:nth-child(3) {
+				/*background-color: #e5daf1;*/
+			}
+
+
+			.preview div:nth-child(2) > div, .preview div:nth-child(3) > div {
+				margin: 2px;
+				padding: 8px;
+				background: #fafafa;
+				color: #666;
+				border: 1px solid #e5e5e5;
+				border-radius: 4px;
+			}
+
+			.tall-is-cheap-show-me-the-code > pre {
+				height: auto;
+				background-color: #fafafa;
+				border-radius: 4px;
+				tab-size: 4;
+				margin: 10px;
+				border: 1px solid rgba(229, 229, 229, 0.2);
+			}
+
+			.by-the-way {
+				font-size: 12px;
+				color: #333;
+				padding: 10px;
+				font-style: italic;
+			}
+
+
+		</style>
+    </head>
+    <body>
+<!-- <div>https://www.freeformatter.com/html-escape.html#ad-output</div>-->
+
+		<div class="title-guide"> Free Flex Guide </div>
+		<hr>
+
+
+<div>不使用 <code> flex </code> </div>
+		<div class="box">
+			<div class="tall-is-cheap-show-me-the-code">
+				<div class="tips"> HTML</div>
+				<pre>
+					<code>
+		&lt;div&gt;
+			&lt;div&gt; 1 &lt;/div&gt;
+			&lt;div&gt; 2 &lt;/div&gt;
+			&lt;div&gt; 3 &lt;/div&gt;
+		&lt;/div&gt;</code>
+				</pre>
+			</div>
+			<div class="preview">
+				<div class="tips"> 效果 </div>
+				<div>
+					<div> 1 </div>
+					<div> 2 </div>
+					<div> 3 </div>
+				</div>
+			</div>
+			<div class="by-the-way">  原味大概就是这种感觉吧 ORZ </div>
+		</div>
+
+
+<div>使用 <code> flex </code> </div>
+		<div class="box">
+			<div class="tall-is-cheap-show-me-the-code">
+				<div class="tips"> 父容器上添加基础类 <code> .flex </code>  </div>
+				<pre>
+					<code>
+		&lt;div class=&quot;flex&quot;&gt;
+			&lt;div&gt; 1 &lt;/div&gt;
+			&lt;div&gt; 2 &lt;/div&gt;
+			&lt;div&gt; 3 &lt;/div&gt;
+		&lt;/div&gt;</code>
+				</pre>
+			</div>
+			<div class="preview">
+				<div class="tips"> 效果 </div>
+				<div class="flex">
+					<div class=""> 1 </div>
+					<div class=""> 2 </div>
+					<div class=""> 3 </div>
+				</div>
+			</div>
+		</div>
+
+		<div class="box">
+			<div class="tall-is-cheap-show-me-the-code">
+				<div class="tips"> 子项按比列分配 <code> .flex1 </code> <code> .flex2 </code> <code> .flex3 </code> ... </div>
+				<pre>
+					<code>
+		&lt;div class=&quot;flex&quot;&gt;
+			&lt;div class=&quot;flex1&quot;&gt; 1 &lt;/div&gt;
+			&lt;div class=&quot;flex2&quot;&gt; 2 &lt;/div&gt;
+			&lt;div class=&quot;flex3&quot;&gt; 3 &lt;/div&gt;
+		&lt;/div&gt;</code>
+				</pre>
+				<pre>
+					<code>
+		&lt;div class=&quot;flex&quot;&gt;
+			&lt;div class=&quot;flex2&quot;&gt; 2 &lt;/div&gt;
+			&lt;div class=&quot;flex10&quot;&gt; 10 &lt;/div&gt;
+		&lt;/div&gt;</code>
+				</pre>
+			</div>
+			<div class="preview">
+				<div class="tips"> 效果 </div>
+				<div class="flex">
+					<div class="flex1"> 1 </div>
+					<div class="flex2"> 2 </div>
+					<div class="flex3"> 3 </div>
+				</div>
+				<div class="flex">
+					<div class="flex2"> 2 </div>
+					<div class="flex10"> 10 </div>
+				</div>
+			</div>
+			<div class="by-the-way">  目前支持10种：
+				<code> .flex1 </code>
+				<code> .flex2 </code>
+				...
+				<code> .flex9 </code>
+				<code> .flex10 </code>
+			</div>
+		</div>
+
+		<div class="box">
+			<div class="tall-is-cheap-show-me-the-code">
+				<div class="tips"> flex方向，从左到右 <code> .flex-row </code> （默认） </div>
+				<pre>
+					<code>
+		&lt;div class=&quot;flex flex-row&quot;&gt;
+			&lt;div class=&quot;flex1&quot;&gt; 1 &lt;/div&gt;
+			&lt;div class=&quot;flex2&quot;&gt; 2 &lt;/div&gt;
+			&lt;div class=&quot;flex3&quot;&gt; 3 &lt;/div&gt;
+		&lt;/div&gt;</code>
+				</pre>
+			</div>
+			<div class="preview">
+				<div class="tips"> 效果 </div>
+				<div class="flex flex-row">
+					<div class="flex1"> 1 </div>
+					<div class="flex2"> 2 </div>
+					<div class="flex3"> 3 </div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="box">
+			<div class="tall-is-cheap-show-me-the-code">
+				<div class="tips"> flex方向，从右到左 <code> .flex-row-reverse </code> </div>
+				<pre>
+					<code>
+		&lt;div class=&quot;flex flex-row-reverse&quot;&gt;
+			&lt;div class=&quot;flex1&quot;&gt; 1 &lt;/div&gt;
+			&lt;div class=&quot;flex2&quot;&gt; 2 &lt;/div&gt;
+			&lt;div class=&quot;flex3&quot;&gt; 3 &lt;/div&gt;
+		&lt;/div&gt;</code>
+				</pre>
+			</div>
+			<div class="preview">
+				<div class="tips"> 效果 </div>
+				<div class="flex flex-row-reverse">
+					<div class="flex1"> 1 </div>
+					<div class="flex2"> 2 </div>
+					<div class="flex3"> 3 </div>
+				</div>
+			</div>
+		</div>
+
+		<div class="box">
+			<div class="tall-is-cheap-show-me-the-code">
+				<div class="tips"> flex方向，从上到下 <code> .flex-col </code> （默认）</div>
+				<pre>
+					<code>
+		&lt;div class=&quot;flex flex-col&quot;&gt;
+			&lt;div class=&quot;flex1&quot;&gt; 1 &lt;/div&gt;
+			&lt;div class=&quot;flex2&quot;&gt; 2 &lt;/div&gt;
+			&lt;div class=&quot;flex3&quot;&gt; 3 &lt;/div&gt;
+		&lt;/div&gt;</code>
+				</pre>
+			</div>
+			<div class="preview">
+				<div class="tips"> 效果 </div>
+				<div class="flex flex-col" style="height: 160px;">
+					<div class="flex1"> 1 </div>
+					<div class="flex2"> 2 </div>
+					<div class="flex3"> 3 </div>
+				</div>
+			</div>
+			<div class="by-the-way"> 如果想让子项能按比列分配，需要给定明确的高度值，如本例 height: 160px  </div>
+		</div>
+
+		<div class="box">
+			<div class="tall-is-cheap-show-me-the-code">
+				<div class="tips"> flex方向，从下到上 <code> .flex-col-reverse </code> </div>
+				<pre>
+					<code>
+		&lt;div class=&quot;flex flex-col-reverse&quot;&gt;
+			&lt;div class=&quot;flex1&quot;&gt; 1 &lt;/div&gt;
+			&lt;div class=&quot;flex2&quot;&gt; 2 &lt;/div&gt;
+			&lt;div class=&quot;flex3&quot;&gt; 3 &lt;/div&gt;
+		&lt;/div&gt;</code>
+				</pre>
+			</div>
+			<div class="preview">
+				<div class="tips"> 效果 </div>
+				<div class="flex flex-col-reverse" style="height: 160px;">
+					<div class="flex1"> 1 </div>
+					<div class="flex2"> 2 </div>
+					<div class="flex3"> 3 </div>
+				</div>
+			</div>
+			<div class="by-the-way"> 如果想让子项能按比列分配，需要给定明确的高度值，如本例 height: 160px  </div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+</html>
