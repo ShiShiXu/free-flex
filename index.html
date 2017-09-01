@@ -38,6 +38,7 @@
 				font-size: 10px;
 				font-family: Monaco,Menlo,Consolas,"Courier New",FontAwesome,monospace;
 				color: #d05;
+				font-style: italic;
 			}
 
 			.title-guide span:last-child{
@@ -780,108 +781,6 @@
         </script>
 
 
-
-
-<!--
-
-
-        <script type="text/javascript">
-            function addLoadEvent( func ) {
-                var oldonload = window.onload ;
-                if ( typeof window.onload !== 'function' ) {
-                    window.onload = func ;
-                }
-                else {
-                    window.onload = function () {
-                        oldonload();
-                        func();
-                    }
-                }
-            }
-
-            function toggle() {
-
-                var tab1 = document.querySelectorAll('.tab1');
-                var tab2 = document.querySelectorAll('.tab2');
-                var showCode = document.querySelectorAll('.show-code');
-                var preview = document.querySelectorAll('.preview');
-
-
-                tab1.forEach( function( currentValue, index, arr ) {
-
-                    currentValue.addEventListener('click', function () {
-
-                        currentValue.className = 'tab tab1 active' ; // 自身添加 active
-
-                        if ( currentValue.nextSibling ) {
-                            console.log( "下个节点是：%o" , currentValue.nextSibling );
-
-                            if ( currentValue.nextSibling.className.indexOf('active') !== -1 ) {
-                                // 若tab2 含有 active  则删除
-                                currentValue.nextSibling.className = 'tab tab2';
-                            }
-                            else {
-                                return false ;
-                            }
-                        }
-                        else {
-                            console.log("error");
-                        }
-
-                        console.log(showCode[index].className) ;
-                        console.log(preview[index].className) ;
-
-                        showCode[index].className = "show-code";
-                        preview[index].className = "preview hide";
-
-                    });
-
-                });
-
-
-                tab2.forEach( function( currentValue, index, arr ) {
-
-                    currentValue.addEventListener('click', function () {
-
-                        currentValue.className = 'tab tab2 active' ; // 自身添加 active
-
-                        if ( currentValue.previousSibling ) {
-                            console.log( "上个节点是：%o" , currentValue.previousSibling );
-
-                            if ( currentValue.previousSibling.className.indexOf('active') !== -1 ) {
-                                // 若tab1 含有 active  则删除
-                                currentValue.previousSibling.className = 'tab tab1';
-							}
-							else {
-                                return false ;
-							}
-
-                        }
-                        else {
-                            console.log( "error"  );
-                        }
-
-                        console.log(showCode[index].className) ;
-                        console.log(preview[index].className) ;
-
-                        showCode[index].className = "show-code hide";
-                        preview[index].className = "preview";
-
-                    });
-
-                })
-
-            }
-
-
-
-            addLoadEvent(toggle);
-
-
-
-        </script>
-
--->
 
 
     </body>
