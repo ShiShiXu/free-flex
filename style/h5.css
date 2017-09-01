@@ -54,7 +54,7 @@ table {
 
 html, body {
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 
 /*解决Firefox点击连接产生的虚线框问题*/

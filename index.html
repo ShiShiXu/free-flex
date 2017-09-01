@@ -66,7 +66,7 @@
 			}
 
 			pre code {
-				font-size: 10px;
+				font-size: 12px;
 				font-family: Monaco,Menlo,Consolas,"Courier New",FontAwesome,monospace;
 				color: #999;
 				border-radius: 3px;
@@ -104,9 +104,10 @@
 			}
 			.tab {
 				position: relative;
-				padding: 0 12px;
+				padding: 0 24px;
 				height: 100%;
 				line-height: 30px;
+				display: inline-block;
 			}
 
 			.active {
@@ -170,8 +171,8 @@
 				margin: 2px;
 				padding: 8px;
 				background: #fafafa;
-				color: #666;
-				border: 1px solid #e5e5e5;
+				color: #999;
+				border: 1px solid rgba(229, 229, 229, 0.2);
 				border-radius: 4px;
 			}
 
@@ -189,6 +190,12 @@
 				color: #999;
 				padding: 10px;
 				font-style: italic;
+			}
+
+			@media screen and ( max-width: 320px ) {
+				pre code {
+					font-size: 10px;
+				}
 			}
 
 
@@ -732,7 +739,15 @@
 			</div>
 		</div>
 
+		<script src="./js/fastclick.min.js"></script>
+
         <script type="text/javascript">
+
+				if ('addEventListener' in document) {
+					document.addEventListener('DOMContentLoaded', function() {
+						FastClick.attach(document.body);
+					}, false);
+				}
 
                 var tab1 = document.getElementsByClassName('tab1');
                 var tab2 = document.getElementsByClassName('tab2');
