@@ -45,6 +45,14 @@
 				color: #999;
 			}
 
+            .section-free {
+                color: #1FA2D6;
+            }
+            .section-flex {
+                color: #d05;
+            }
+
+
 			.highlight {
 				font-size: 12px;
 				font-family: Monaco,Menlo,Consolas,"Courier New",FontAwesome,monospace;
@@ -92,7 +100,6 @@
 			.box {
 				position: relative;
 				padding: 10px 0 40px 0;
-				min-height: 280px;
 			}
 
 			.box::after {
@@ -197,18 +204,35 @@
 				border: 1px solid rgba(229, 229, 229, 0.2);
 			}
 
-			.by-the-way {
+            .box .show-code .by-the-way {
+                font-size: 12px;
+                color: #999;
+                padding: 10px;
+                margin : 0;
+                font-style: italic;
+            }
+			.box .preview .by-the-way {
 				font-size: 12px;
 				color: #999;
 				padding: 10px;
+                margin : 10px 0 0;
 				font-style: italic;
 			}
 
+            .copyright {
+                font-size: 12px;
+                color: #999;
+                text-align: center;
+                font-style: italic;
+            }
+
 			@media screen and ( max-width: 320px ) {
+                body {
+                    padding: 6px;
+                }
 				pre code {
 					font-size: 10px;
 				}
-
 				.highlight {
 					font-size: 10px;
 				}
@@ -235,11 +259,11 @@
 		</div>
 		<hr>
 
+<div class="section">不使用 flexbox
+</div>
 
-<div>不使用 <code> flex </code> </div>
 
-
-		<div class="box">
+		<div class="box" style="min-height: 270px;">
 
             <div class="tabs">
 				<span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
@@ -269,10 +293,14 @@
 		</div>
 
 
-<div>使用 <code> flex </code> </div>
+<div class="section">
+    <span class="section-free"> Free </span>
+    <span class="section-flex"> Flex </span>
+    基础
+</div>
 
 
-		<div class="box">
+		<div class="box" style="min-height: 270px;">
 
             <div class="tabs">
 				<span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
@@ -344,7 +372,7 @@
 			</div>
 		</div>
 
-		<div class="box">
+		<div class="box" style="min-height: 270px;">
 
             <div class="tabs">
 				<span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
@@ -372,7 +400,7 @@
 		</div>
 
 
-		<div class="box">
+		<div class="box" style="min-height: 270px;">
 
             <div class="tabs">
 				<span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
@@ -455,7 +483,7 @@
 			</div>
 		</div>
 
-		<div class="box" style="min-height: 350px;">
+		<div class="box" style="min-height: 400px;">
 
             <div class="tabs">
 				<span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
@@ -493,7 +521,7 @@
 			</div>
 		</div>
 
-		<div class="box" style="min-height: 350px;">
+		<div class="box" style="min-height: 400px;">
 
             <div class="tabs">
 				<span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
@@ -531,7 +559,7 @@
 			</div>
 		</div>
 
-		<div class="box" style="min-height: 350px;">
+		<div class="box" style="min-height: 400px;">
 
             <div class="tabs">
 				<span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
@@ -569,7 +597,7 @@
 			</div>
 		</div>
 
-		<div class="box" style="min-height: 420px;">
+		<div class="box" style="min-height: 550px;">
 
             <div class="tabs">
 				<span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
@@ -673,7 +701,7 @@
 			</div>
 		</div>
 
-		<div class="box">
+		<div class="box" style="min-height: 512px;">
 
             <div class="tabs">
 				<span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
@@ -732,7 +760,7 @@
 		</div>
 
 
-		<div class="box">
+		<div class="box" style="min-height: 240px;">
 
             <div class="tabs">
 				<span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
@@ -757,8 +785,85 @@
 			</div>
 		</div>
 
-		<script src="./js/fastclick.min.js"></script>
 
+
+
+<div class="section">
+    <span class="section-free"> Free </span>
+    <span class="section-flex"> Flex </span>
+    高级
+</div>
+
+
+<div class="box" style="min-height: 300px;">
+    <div class="tabs">
+        <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+    </div>
+
+    <div class="show-code">
+        <div class="tips"> 放大比例（当子容器比父容器小）
+            <code> .flex-grow-* </code>
+        </div>
+        <pre>
+            <code></code>
+        </pre>
+        <div class="by-the-way">  目前支持10种：
+            <code> .flex-grow-1 </code>
+            <code> .flex-grow-2 </code>
+            ...
+            <code> .flex-grow-9 </code>
+            <code> .flex-grow-10 </code>。
+            默认不放大
+        </div>
+    </div>
+    <div class="preview hide">
+        <div class="tips"> 效果： 前  、后 </div>
+        <div class="flex" style="width:280px;margin:0 auto;background-color: #fafafa;">
+            <div style="width: 60px;margin: 0;"> flex-grow-1 </div>
+            <div style="width: 60px;margin: 0;"> flex-grow-2 </div>
+            <div style="width: 60px;margin: 0;"> flex-grow-1 </div>
+        </div>
+
+        <div class="flex" style="width:280px;margin:2px auto 0;background-color: #fafafa;">
+            <div class="flex-grow-1" style="width: 60px;margin: 0;"> flex-grow-1 </div>
+            <div class="flex-grow-2" style="width: 60px;margin: 0;"> flex-grow-2 </div>
+            <div class="flex-grow-1" style="width: 60px;margin: 0;"> flex-grow-1 </div>
+        </div>
+
+        <div class="by-the-way">  计算方法：<br>
+            本例设置容器宽 280px，每个子元素宽 60px，则： <br>
+            容器剩余：280 - ( 60 + 60 + 60 ) = 100 px; <br>
+            根据 flex-grow 值分配的比例：100 / ( 1 + 2 + 1 ) = 25 px ；
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="copyright"> &copy; 2017 势仔仔  </div>
+
+
+
+
+<script src="./js/fastclick.min.js"></script>
         <script type="text/javascript">
 
 				if ('addEventListener' in document) {
@@ -812,10 +917,6 @@
 
 
         </script>
-
-
-
-
     </body>
 
 </html>
