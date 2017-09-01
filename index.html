@@ -28,32 +28,44 @@
 				text-align: center;
 			}
 
-			.title-guide span:first-child{
+			.title-guide span:nth-child(1){
 				font-size: 24px;
 				font-weight: bold;
 				color: #1FA2D6;
 			}
 
-			.highlight {
-				font-size: 10px;
-				font-family: Monaco,Menlo,Consolas,"Courier New",FontAwesome,monospace;
-				color: #d05;
-				font-style: italic;
-			}
-
-			.title-guide span:last-child{
+			.title-guide span:nth-child(2) {
 				font-size: 24px;
 				font-weight: bold;
 				color: #d05;
 			}
 
+			.title-guide span:nth-child(3) {
+				font-size: 14px;
+				color: #666;
+			}
+
+			.highlight {
+				font-size: 12px;
+				font-family: Monaco,Menlo,Consolas,"Courier New",FontAwesome,monospace;
+				color: #d05;
+			}
+
 			.detail {
+				margin-top: 20px;
 				margin-bottom: 20px;
+				text-align: center;
 			}
 
 			.detail div {
 				color: #999;
 				font-size: 12px;
+			}
+
+			.detail span {
+				color: #999;
+				font-size: 12px;
+				margin-left: 10px;
 			}
 
 			hr {
@@ -70,7 +82,7 @@
 				font-family: Monaco,Menlo,Consolas,"Courier New",FontAwesome,monospace;
 				color: #999;
 				border-radius: 3px;
-				background: #fafafa;
+				background: #f8f8f8;
 			}
 
 			.toggle_js img {
@@ -98,7 +110,7 @@
 			.tabs {
 				position: relative;
 				margin: 10px;
-				background: #fafafa;
+				background: #f8f8f8;
 				border-bottom: 1px solid #d1d1d1;
 				height: 30px;
 			}
@@ -132,7 +144,7 @@
 				position: relative;
 				margin: 4px 10px;
 				padding: 8px 8px;
-				background: #ebf1f5;
+				background: #f8f8f8;
 				font-size: 12px;
 				color: #999;
 				font-style: italic;
@@ -172,13 +184,13 @@
 				padding: 8px;
 				background: #fafafa;
 				color: #999;
-				border: 1px solid rgba(229, 229, 229, 0.2);
+				border: 1px solid rgba(229, 229, 229, 0.5);
 				border-radius: 4px;
 			}
 
 			.show-code > pre {
 				height: auto;
-				background-color: #fafafa;
+				background-color: #f8f8f8;
 				border-radius: 4px;
 				tab-size: 4;
 				margin: 10px;
@@ -196,6 +208,10 @@
 				pre code {
 					font-size: 10px;
 				}
+
+				.highlight {
+					font-size: 10px;
+				}
 			}
 
 
@@ -207,15 +223,17 @@
 		<div id="title-guide" class="title-guide">
 			<span> Free </span>
 			<span> Flex </span>
+			<span> 1.0 </span>
 		</div>
 
-		<hr>
 
-		<div class="detail">
+		<div class="detail"><!--
 			<div>主轴（main axis）方向：水平、默认从左到右</div>
-			<div>侧轴（cross axis）方向：垂直、默认从上到下</div>
-			<div> 兼容性 iOS 8.2+ Android 4.1.1+ </div>
+			<div>侧轴（cross axis）方向：垂直、默认从上到下</div>-->
+			<span> iOS 8.2+ </span>
+			<span>Android 4.1+ </span>
 		</div>
+		<hr>
 
 
 <div>不使用 <code> flex </code> </div>
