@@ -225,6 +225,13 @@
                 text-align: center;
                 font-style: italic;
             }
+            .copyright a {
+                font-size: 12px;
+                color: #999;
+                text-align: center;
+                font-style: italic;
+                text-decoration: none;
+            }
 
 			@media screen and ( max-width: 320px ) {
                 body {
@@ -795,7 +802,7 @@
 </div>
 
 
-<div class="box" style="min-height: 300px;">
+<div class="box" style="min-height: 430px;">
     <div class="tabs">
         <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
     </div>
@@ -819,22 +826,26 @@
     <div class="preview hide">
         <div class="tips"> 效果： 前  、后 </div>
         <div class="flex" style="width:280px;margin:0 auto;background-color: #fafafa;">
-            <div style="width: 60px;margin: 0;"> flex-grow-1 </div>
-            <div style="width: 60px;margin: 0;"> flex-grow-2 </div>
-            <div style="width: 60px;margin: 0;"> flex-grow-1 </div>
+            <div style="width: 60px;margin: 0;"> 1单位 </div>
+            <div style="width: 60px;margin: 0;"> 2单位 </div>
+            <div style="width: 60px;margin: 0;"> 1单位 </div>
         </div>
 
         <div class="flex" style="width:280px;margin:2px auto 0;background-color: #fafafa;">
-            <div class="flex-grow-1" style="width: 60px;margin: 0;"> flex-grow-1 </div>
-            <div class="flex-grow-2" style="width: 60px;margin: 0;"> flex-grow-2 </div>
-            <div class="flex-grow-1" style="width: 60px;margin: 0;"> flex-grow-1 </div>
+            <div class="flex-grow-1" style="width: 60px;margin: 0;"> 1单位 </div>
+            <div class="flex-grow-2" style="width: 60px;margin: 0;"> 2单位 </div>
+            <div class="flex-grow-1" style="width: 60px;margin: 0;"> 1单位 </div>
         </div>
 
         <div class="by-the-way">  计算方法：<br>
-            本例设置容器宽 280px，每个子元素宽 60px，则： <br>
-            容器剩余：280 - ( 60 + 60 + 60 ) = 100 px; <br>
-            根据 flex-grow 值分配的比例：100 / ( 1 + 2 + 1 ) = 25 px ；
-
+            本例设置容器宽 280px，每个子元素宽 60px，则：<br>
+            容器剩余： <br>
+            280 - ( 60 + 60 + 60 ) = 100 px； <br>
+            根据 flex-grow 值分配的比例： <br>
+            100 / ( 1 + 2 + 1 ) = 25 px ； <br>
+            最终子元素宽度： <br>
+            ( 60 + 25 ) + ( 60 + 2*25 ) + ( 60 + 25 ) px = 280 px . <br>
+            可以打开Chrome Developer Tools 看一下
         </div>
     </div>
 </div>
@@ -843,22 +854,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="copyright"> &copy; 2017 势仔仔  </div>
+<div class="copyright"> &copy; 2017 <a href="http://www.kidsir.com" target="_blank"> 势仔仔 </a></div>
 
 
 
