@@ -13,6 +13,7 @@
       <link rel="stylesheet" href="./style/h5.css">
       <title>Free布局</title>
 		<style>
+			/* 自定义 */
 
 			* {
 				color: #333;
@@ -24,10 +25,34 @@
 			}
 
 			.title-guide {
-				font-size: 16px;
-				font-weight: bold;
-				padding-left: 10px;
 				text-align: center;
+			}
+
+			.title-guide span:first-child{
+				font-size: 24px;
+				font-weight: bold;
+				color: #1FA2D6;
+			}
+
+			.highlight {
+				font-size: 10px;
+				font-family: Monaco,Menlo,Consolas,"Courier New",FontAwesome,monospace;
+				color: #d05;
+			}
+
+			.title-guide span:last-child{
+				font-size: 24px;
+				font-weight: bold;
+				color: #d05;
+			}
+
+			.detail {
+				margin-bottom: 20px;
+			}
+
+			.detail div {
+				color: #999;
+				font-size: 12px;
 			}
 
 			hr {
@@ -39,17 +64,17 @@
 				transform: scaleY(.5);
 			}
 
-			code {
-				font-size: 12px;
-				font-family: Consolas,monospace,serif;
-				color: #d05;
+			pre code {
+				font-size: 10px;
+				font-family: Monaco,Menlo,Consolas,"Courier New",FontAwesome,monospace;
+				color: #999;
 				border-radius: 3px;
 				background: #fafafa;
 			}
 
-            .toggle_js img {
-                display: block;
-            }
+			.toggle_js img {
+				display: block;
+			}
 
 			.box {
 				position: relative;
@@ -68,34 +93,25 @@
 				transform: scaleY(.5);
 			}
 
-			.box > div > code {
-				font-size: 12px;
-				font-family: Consolas,monospace,serif;
-				color: #d05;
-				white-space: nowrap;
-				padding: 0 2px;
-				border-radius: 3px;
-				background: #fafafa;
-			}
 
-            .tabs {
+			.tabs {
 				position: relative;
 				margin: 10px;
 				background: #fafafa;
 				border-bottom: 1px solid #d1d1d1;
 				height: 30px;
-            }
-            .tab {
+			}
+			.tab {
 				position: relative;
 				padding: 0 12px;
 				height: 100%;
 				line-height: 30px;
-            }
+			}
 
 			.active {
 				display: inline-block;
 			}
-            .tab.active::after  {
+			.tab.active::after  {
 				position: absolute;
 				bottom: -1px;
 				left: 0;
@@ -104,34 +120,52 @@
 				height: 2px;
 				background-color: #1FA2D6;
 				z-index: 10;
-            }
+			}
 
 			.hide {
 				display: none;
 			}
 
 			.tips {
-                position: relative;
-                margin: 4px 10px;
-                padding: 8px 8px;
-                background: #fafafa;
-                font-size: 12px;
-                color: #999;
+				position: relative;
+				margin: 4px 10px;
+				padding: 8px 8px;
+				background: #ebf1f5;
+				font-size: 12px;
+				color: #999;
+				font-style: italic;
 			}
 
-			.preview {
+			code, .tips code {
+				font-size: 12px;
+				font-family: Monaco,Menlo,Consolas,"Courier New",FontAwesome,monospace;
+				color: #d05;
+				border-radius: 3px;
+				background: #fafafa;
+				padding: 0 3px 0 2px;
 			}
-            .show-code {
-            }
 
-			.preview > div:nth-child(2), .preview > div:nth-child(3) {
+			.by-the-way code {
+				font-size: 12px;
+				font-family: Monaco,Menlo,Consolas,"Courier New",FontAwesome,monospace;
+				color: #999;
+				border-radius: 3px;
+				background: #fafafa;
+				padding: 0 3px 0 2px;
+			}
+
+			.preview > div:nth-child(2), .preview > div:nth-child(3),
+			.preview > div:nth-child(4), .preview > div:nth-child(5),
+			.preview > div:nth-child(6) {
 				margin: 6px 10px;
 				max-width: 100%;
 				overflow: hidden;
 			}
 
 
-			.preview div:nth-child(2) > div, .preview div:nth-child(3) > div {
+			.preview div:nth-child(2) > div, .preview div:nth-child(3) > div,
+			.preview div:nth-child(4) > div, .preview div:nth-child(5) > div,
+			.preview div:nth-child(6) > div{
 				margin: 2px;
 				padding: 8px;
 				background: #fafafa;
@@ -151,18 +185,29 @@
 
 			.by-the-way {
 				font-size: 12px;
-				color: #333;
+				color: #999;
 				padding: 10px;
 				font-style: italic;
 			}
+
 
 		</style>
     </head>
     <body>
 <!-- <div>https://www.freeformatter.com/html-escape.html#ad-output</div>-->
 
-		<div class="title-guide"> Free Flex Guide </div>
+		<div id="title-guide" class="title-guide">
+			<span> Free </span>
+			<span> Flex </span>
+		</div>
+
 		<hr>
+
+		<div class="detail">
+			<div>主轴（main axis）方向：水平、默认从左到右</div>
+			<div>侧轴（cross axis）方向：垂直、默认从上到下</div>
+			<div> 兼容性 iOS 8.2+ Android 4.1.1+ </div>
+		</div>
 
 
 <div>不使用 <code> flex </code> </div>
@@ -176,14 +221,14 @@
 
 			<div class="show-code">
 				<div class="tips">原味的感觉 ORZ</div>
-				<pre>
-					<code>
-		&lt;div&gt;
-			&lt;div&gt; 1 &lt;/div&gt;
-			&lt;div&gt; 2 &lt;/div&gt;
-			&lt;div&gt; 3 &lt;/div&gt;
-		&lt;/div&gt;</code>
-				</pre>
+			<pre>
+				<code>
+	&lt;div&gt;
+		&lt;div&gt; 1 &lt;/div&gt;
+		&lt;div&gt; 2 &lt;/div&gt;
+		&lt;div&gt; 3 &lt;/div&gt;
+	&lt;/div&gt;</code>
+			</pre>
 			</div>
 
 			<div class="preview hide">
@@ -208,15 +253,15 @@
 			</div>
 
 			<div class="show-code">
-				<div class="tips"> 父容器上添加基础类 <code> .flex </code>  </div>
-				<pre>
-					<code>
-		&lt;div class=&quot;flex&quot;&gt;
-			&lt;div&gt; 1 &lt;/div&gt;
-			&lt;div&gt; 2 &lt;/div&gt;
-			&lt;div&gt; 3 &lt;/div&gt;
-		&lt;/div&gt;</code>
-				</pre>
+				<div class="tips"> 父容器上添加基础类 <code>.flex </code>  </div>
+			<pre>
+				<code>
+	&lt;div class=&quot;<span class="highlight">flex</span>&quot;&gt;
+		&lt;div&gt; 1 &lt;/div&gt;
+		&lt;div&gt; 2 &lt;/div&gt;
+		&lt;div&gt; 3 &lt;/div&gt;
+	&lt;/div&gt;</code>
+			</pre>
 			</div>
 			<div class="preview hide">
 				<div class="tips"> 效果 </div>
@@ -235,22 +280,22 @@
 			</div>
 
 			<div class="show-code">
-				<div class="tips"> 子项按比列分配 <code> .flex1 </code> <code> .flex2 </code> <code> .flex3 </code> ... </div>
-				<pre>
-					<code>
-		&lt;div class=&quot;flex&quot;&gt;
-			&lt;div class=&quot;flex1&quot;&gt; 1 &lt;/div&gt;
-			&lt;div class=&quot;flex2&quot;&gt; 2 &lt;/div&gt;
-			&lt;div class=&quot;flex3&quot;&gt; 3 &lt;/div&gt;
-		&lt;/div&gt;</code>
-				</pre>
-				<pre>
-					<code>
-		&lt;div class=&quot;flex&quot;&gt;
-			&lt;div class=&quot;flex2&quot;&gt; 2 &lt;/div&gt;
-			&lt;div class=&quot;flex10&quot;&gt; 10 &lt;/div&gt;
-		&lt;/div&gt;</code>
-				</pre>
+				<div class="tips"> 子项按比列分配 <code>.flex1</code> <code>.flex2</code> <code>.flex3</code> ... </div>
+			<pre>
+				<code>
+	&lt;div class=&quot;flex&quot;&gt;
+		&lt;div class=&quot;<span class="highlight">flex1</span>&quot;&gt; 1 &lt;/div&gt;
+		&lt;div class=&quot;<span class="highlight">flex2</span>&quot;&gt; 2 &lt;/div&gt;
+		&lt;div class=&quot;<span class="highlight">flex3</span>&quot;&gt; 3 &lt;/div&gt;
+	&lt;/div&gt;</code>
+			</pre>
+			<pre>
+				<code>
+	&lt;div class=&quot;flex&quot;&gt;
+		&lt;div class=&quot;<span class="highlight">flex2</span>&quot;&gt; 2 &lt;/div&gt;
+		&lt;div class=&quot;<span class="highlight">flex10</span>&quot;&gt; 10 &lt;/div&gt;
+	&lt;/div&gt;</code>
+			</pre>
 				<div class="by-the-way">  目前支持10种：
 					<code> .flex1 </code>
 					<code> .flex2 </code>
@@ -281,14 +326,14 @@
 
 			<div class="show-code">
 				<div class="tips"> flex方向，从左到右 <code> .flex-row </code> （默认） </div>
-				<pre>
-					<code>
-		&lt;div class=&quot;flex flex-row&quot;&gt;
-			&lt;div class=&quot;flex1&quot;&gt; 1 &lt;/div&gt;
-			&lt;div class=&quot;flex2&quot;&gt; 2 &lt;/div&gt;
-			&lt;div class=&quot;flex3&quot;&gt; 3 &lt;/div&gt;
-		&lt;/div&gt;</code>
-				</pre>
+			<pre>
+				<code>
+	&lt;div class=&quot;flex <span class="highlight">flex-row</span>&quot;&gt;
+		&lt;div class=&quot;flex1&quot;&gt; 1 &lt;/div&gt;
+		&lt;div class=&quot;flex2&quot;&gt; 2 &lt;/div&gt;
+		&lt;div class=&quot;flex3&quot;&gt; 3 &lt;/div&gt;
+	&lt;/div&gt;</code>
+			</pre>
 			</div>
 			<div class="preview hide">
 				<div class="tips"> 效果 </div>
@@ -309,14 +354,14 @@
 
 			<div class="show-code">
 				<div class="tips"> flex方向，从右到左 <code> .flex-row-reverse </code> </div>
-				<pre>
-					<code>
-		&lt;div class=&quot;flex flex-row-reverse&quot;&gt;
-			&lt;div class=&quot;flex1&quot;&gt; 1 &lt;/div&gt;
-			&lt;div class=&quot;flex2&quot;&gt; 2 &lt;/div&gt;
-			&lt;div class=&quot;flex3&quot;&gt; 3 &lt;/div&gt;
-		&lt;/div&gt;</code>
-				</pre>
+			<pre>
+				<code>
+	&lt;div class=&quot;flex <span class="highlight">flex-row-reverse</span>&quot;&gt;
+		&lt;div class=&quot;flex1&quot;&gt; 1 &lt;/div&gt;
+		&lt;div class=&quot;flex2&quot;&gt; 2 &lt;/div&gt;
+		&lt;div class=&quot;flex3&quot;&gt; 3 &lt;/div&gt;
+	&lt;/div&gt;</code>
+			</pre>
 			</div>
 			<div class="preview hide">
 				<div class="tips"> 效果 </div>
@@ -336,14 +381,14 @@
 
 			<div class="show-code">
 				<div class="tips"> flex方向，从上到下 <code> .flex-col </code> （默认）</div>
-				<pre>
-					<code>
-		&lt;div class=&quot;flex flex-col&quot;&gt;
-			&lt;div class=&quot;flex1&quot;&gt; 1 &lt;/div&gt;
-			&lt;div class=&quot;flex2&quot;&gt; 2 &lt;/div&gt;
-			&lt;div class=&quot;flex3&quot;&gt; 3 &lt;/div&gt;
-		&lt;/div&gt;</code>
-				</pre>
+			<pre>
+				<code>
+	&lt;div class=&quot;flex <span class="highlight">flex-col</span>&quot;&gt;
+		&lt;div class=&quot;flex1&quot;&gt; 1 &lt;/div&gt;
+		&lt;div class=&quot;flex2&quot;&gt; 2 &lt;/div&gt;
+		&lt;div class=&quot;flex3&quot;&gt; 3 &lt;/div&gt;
+	&lt;/div&gt;</code>
+			</pre>
 				<div class="by-the-way"> 如果想让子项能按比列分配，需要给定明确的高度值，如本例 height: 160px  </div>
 			</div>
 			<div class="preview hide">
@@ -364,14 +409,14 @@
 
 			<div class="show-code">
 				<div class="tips"> flex方向，从下到上 <code> .flex-col-reverse </code> </div>
-				<pre>
-					<code>
-		&lt;div class=&quot;flex flex-col-reverse&quot;&gt;
-			&lt;div class=&quot;flex1&quot;&gt; 1 &lt;/div&gt;
-			&lt;div class=&quot;flex2&quot;&gt; 2 &lt;/div&gt;
-			&lt;div class=&quot;flex3&quot;&gt; 3 &lt;/div&gt;
-		&lt;/div&gt;</code>
-				</pre>
+			<pre>
+				<code>
+	&lt;div class=&quot;flex <span class="highlight">flex-col-reverse</span>&quot;&gt;
+		&lt;div class=&quot;flex1&quot;&gt; 1 &lt;/div&gt;
+		&lt;div class=&quot;flex2&quot;&gt; 2 &lt;/div&gt;
+		&lt;div class=&quot;flex3&quot;&gt; 3 &lt;/div&gt;
+	&lt;/div&gt;</code>
+			</pre>
 				<div class="by-the-way"> 如果想让子项能按比列分配，需要给定明确的高度值，如本例 height: 160px  </div>
 			</div>
 			<div class="preview hide">
@@ -384,6 +429,224 @@
 			</div>
 		</div>
 
+		<div class="box" style="min-height: 350px;">
+
+            <div class="tabs">
+				<span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+			</div>
+
+			<div class="show-code">
+				<div class="tips"> 内容铺满是否换行：不换行 <code>.flex-nowrap </code> （默认） </div>
+			<pre>
+				<code>
+	&lt;div class=&quot;flex <span class="highlight">flex-nowrap</span>&quot;&gt;
+		&lt;div&gt; item 1 &lt;/div&gt;
+		&lt;div&gt; item 2 &lt;/div&gt;
+		&lt;div&gt; item 3 &lt;/div&gt;
+		&lt;div&gt; item 4 &lt;/div&gt;
+		&lt;div&gt; item 5 &lt;/div&gt;
+		&lt;div&gt; item 6 &lt;/div&gt;
+		&lt;div&gt; item 7 &lt;/div&gt;
+		&lt;div&gt; item 8 &lt;/div&gt;
+	&lt;/div&gt;</code>
+			</pre>
+			<div class="by-the-way"> 本例设置了 max-width: 300px，大屏用户可以更容易看到 nowrap 效果 </div>
+			</div>
+			<div class="preview hide">
+				<div class="tips"> 效果 </div>
+				<div class="flex flex-nowrap" style="max-width: 300px;background-color: #fafafa;">
+					<div> item 1 </div>
+					<div> item 2 </div>
+					<div> item 3 </div>
+					<div> item 4 </div>
+					<div> item 5 </div>
+					<div> item 6 </div>
+					<div> item 7 </div>
+					<div> item 8 </div>
+				</div>
+			</div>
+		</div>
+
+		<div class="box" style="min-height: 350px;">
+
+            <div class="tabs">
+				<span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+			</div>
+
+			<div class="show-code">
+				<div class="tips"> 内容铺满是否换行：换行 <code>.flex-wrap </code> </div>
+			<pre>
+	<code>
+	&lt;div class=&quot;flex <span class="highlight">flex-wrap</span>&quot;&gt;
+		&lt;div&gt; item 1 &lt;/div&gt;
+		&lt;div&gt; item 2 &lt;/div&gt;
+		&lt;div&gt; item 3 &lt;/div&gt;
+		&lt;div&gt; item 4 &lt;/div&gt;
+		&lt;div&gt; item 5 &lt;/div&gt;
+		&lt;div&gt; item 6 &lt;/div&gt;
+		&lt;div&gt; item 7 &lt;/div&gt;
+		&lt;div&gt; item 8 &lt;/div&gt;
+	&lt;/div&gt;</code>
+			</pre>
+			<div class="by-the-way">  本例设置了 max-width: 300px 和 overflow: hidden，大屏用户可以更容易看到 wrap 的效果 </div>
+			</div>
+			<div class="preview hide">
+				<div class="tips"> 效果 </div>
+				<div class="flex flex-wrap" style="max-width: 300px;background-color: #fafafa;">
+					<div> item 1 </div>
+					<div> item 2 </div>
+					<div> item 3 </div>
+					<div> item 4 </div>
+					<div> item 5 </div>
+					<div> item 6 </div>
+					<div> item 7 </div>
+					<div> item 8 </div>
+				</div>
+			</div>
+		</div>
+
+		<div class="box" style="min-height: 350px;">
+
+            <div class="tabs">
+				<span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+			</div>
+
+			<div class="show-code">
+				<div class="tips"> 内容铺满是否换行：换行并倒序 <code>.flex-wrap-reverse </code> </div>
+			<pre>
+				<code>
+	&lt;div class=&quot;flex <span class="highlight">flex-wrap-reverse</span>&quot;&gt;
+		&lt;div&gt; item 1 &lt;/div&gt;
+		&lt;div&gt; item 2 &lt;/div&gt;
+		&lt;div&gt; item 3 &lt;/div&gt;
+		&lt;div&gt; item 4 &lt;/div&gt;
+		&lt;div&gt; item 5 &lt;/div&gt;
+		&lt;div&gt; item 6 &lt;/div&gt;
+		&lt;div&gt; item 7 &lt;/div&gt;
+		&lt;div&gt; item 8 &lt;/div&gt;
+	&lt;/div&gt;</code>
+			</pre>
+			<div class="by-the-way"> 本例设置了 max-width: 300px，大屏用户可以更容易看到 flex-wrap-reverse 效果 </div>
+			</div>
+			<div class="preview hide">
+				<div class="tips"> 效果 </div>
+				<div class="flex flex-wrap-reverse"  style="max-width: 300px;background-color: #fafafa;">
+					<div> item 1 </div>
+					<div> item 2 </div>
+					<div> item 3 </div>
+					<div> item 4 </div>
+					<div> item 5 </div>
+					<div> item 6 </div>
+					<div> item 7 </div>
+					<div> item 8 </div>
+				</div>
+			</div>
+		</div>
+
+		<div class="box" style="min-height: 420px;">
+
+            <div class="tabs">
+				<span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+			</div>
+
+			<div class="show-code">
+				<div class="tips">主轴对齐方式：
+					开始 <code>.h-start </code>
+					中间 <code>.h-center </code>
+					末尾 <code>.h-end </code>
+					围绕 <code>.h-around </code>
+					两端 <code>.h-between </code>
+				</div>
+			<pre>
+				<code>
+	&lt;div class=&quot;flex <span class="highlight">h-start</span>&quot;&gt;
+		&lt;div&gt; h-start &lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;div class=&quot;flex <span class="highlight">h-center</span>&quot;&gt;
+		&lt;div&gt; h-center &lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;div class=&quot;flex <span class="highlight">h-end</span>&quot;&gt;
+		&lt;div&gt; h-end &lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;div class=&quot;flex <span class="highlight">h-around</span>&quot;&gt;
+		&lt;div&gt; h-end &lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;div class=&quot;flex <span class="highlight">h-between</span>&quot;&gt;
+		&lt;div&gt; h-end &lt;/div&gt;
+	&lt;/div&gt;</code>
+			</pre>
+				<div class="by-the-way">  h 是 horizon 的简写</div>
+			</div>
+			<div class="preview hide">
+				<div class="tips"> 效果 </div>
+				<div class="flex h-start" style="background-color: #fafafa;">
+					<div> h-start </div>
+				</div>
+				<div class="flex h-center" style="background-color: #fafafa;">
+					<div> h-center </div>
+				</div>
+				<div class="flex h-end" style="background-color: #fafafa;">
+					<div> h-end </div>
+				</div>
+				<div class="flex h-around " style="background-color: #fafafa;">
+					<div> h-around </div>
+					<div> h-around </div>
+				</div>
+				<div class="flex h-between" style="background-color: #fafafa;">
+					<div> h-between </div>
+					<div> h-between </div>
+				</div>
+			</div>
+		</div>
+
+		<div class="box" style="min-height: 416px;">
+
+            <div class="tabs">
+				<span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+			</div>
+
+			<div class="show-code">
+				<div class="tips">侧轴对齐方式：
+					开始 <code>.v-start </code>
+					中间 <code>.v-center </code>
+					末尾 <code>.v-end </code>
+				</div>
+				<pre>
+					<code>
+	&lt;div class=&quot;flex <span class="highlight">v-start</span>&quot;&gt;
+		&lt;div&gt; v-start &lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;div class=&quot;flex <span class="highlight">v-center</span>&quot;&gt;
+		&lt;div&gt; v-center &lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;div class=&quot;flex <span class="highlight">v-end</span>&quot;&gt;
+		&lt;div&gt; v-end &lt;/div&gt;
+	&lt;/div&gt;</code>
+				</pre>
+				<div class="by-the-way">  v 是 vertical 的简写</div>
+			</div>
+			<div class="preview hide">
+				<div class="tips"> 效果 </div>
+
+				<div class="flex v-start" style="height: 80px;background-color: #fafafa;">
+					<div> v-start </div>
+				</div>
+				<div class="flex v-center" style="height: 80px;background-color: #fafafa;">
+					<div> v-center </div>
+				</div>
+				<div class="flex v-end" style="height: 80px;background-color: #fafafa;">
+					<div> v-end </div>
+				</div>
+
+			</div>
+		</div>
+
 		<div class="box">
 
             <div class="tabs">
@@ -391,89 +654,136 @@
 			</div>
 
 			<div class="show-code">
-				<div class="tips"> 内容铺满是否换行，不换行<code> .flex-nowrap </code> （默认） </div>
+				<div class="tips">侧轴对齐：
+					写在子容器上
+					开始 <code>.self-start </code>
+					中间 <code>.self-center </code>
+					末尾 <code>.self-end </code>
+				</div>
+				<pre>
+		<code>
+	&lt;div class=&quot;flex&quot;&gt;
+		&lt;div class=&quot;<span class="highlight">self-start</span>&quot;&gt;
+			self-start
+		&lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;div class=&quot;flex&quot;&gt;
+		&lt;div class=&quot;<span class="highlight">self-center</span>&quot;&gt;
+			self-center
+		&lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;div class=&quot;flex&quot;&gt;
+		&lt;div class=&quot;<span class="highlight">self-end</span>&quot;&gt;
+			self-end
+		&lt;/div&gt;
+	&lt;/div&gt;</code>
+				</pre>
+				<div class="by-the-way"> 和上例
+					<code> .v-start </code>
+					<code> .v-center </code>
+					<code> .v-end </code> 效果一样 </div>
+			</div>
+			<div class="preview hide">
+				<div class="tips"> 效果 </div>
+				<div class="flex" style="height: 80px;background-color: #fafafa;">
+					<div class="self-start">
+						self-start
+					</div>
+				</div>
+				<div class="flex" style="height: 80px;background-color: #fafafa;">
+					<div class="self-center">
+						self-center
+					</div>
+				</div>
+				<div class="flex" style="height: 80px;background-color: #fafafa;">
+					<div class="self-end">
+						self-end
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="box">
+
+            <div class="tabs">
+				<span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+			</div>
+
+			<div class="show-code">
+				<div class="tips">主轴和侧轴同时对齐：
+					<code> .both-center </code>
+				</div>
 				<pre>
 					<code>
-		&lt;div class=&quot;flex flex-nowrap&quot;&gt;
-			&lt;div&gt; item 1 &lt;/div&gt;
-			&lt;div&gt; item 2 &lt;/div&gt;
-			&lt;div&gt; item 3 &lt;/div&gt;
-			&lt;div&gt; item 4 &lt;/div&gt;
-			&lt;div&gt; item 5 &lt;/div&gt;
-			&lt;div&gt; item 6 &lt;/div&gt;
-			&lt;div&gt; item 7 &lt;/div&gt;
-			&lt;div&gt; item 8 &lt;/div&gt;
-		&lt;/div&gt;</code>
+	&lt;div class=&quot;flex <span class="highlight">both-center</span>&quot;&gt;
+		&lt;div&gt; both-center &lt;/div&gt;
+	&lt;/div&gt;</code>
 				</pre>
 			</div>
 			<div class="preview hide">
 				<div class="tips"> 效果 </div>
-				<div class="flex flex-nowrap">
-					<div> item 1 </div>
-					<div> item 2 </div>
-					<div> item 3 </div>
-					<div> item 4 </div>
-					<div> item 5 </div>
-					<div> item 6 </div>
-					<div> item 7 </div>
-					<div> item 8 </div>
+				<div class="flex both-center v-center" style="height: 80px;background-color: #fafafa;">
+					<div> both-center </div>
 				</div>
 			</div>
 		</div>
 
-		<div class="box">
+        <script type="text/javascript">
 
-            <div class="tabs">
-				<span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
-			</div>
+                var tab1 = document.getElementsByClassName('tab1');
+                var tab2 = document.getElementsByClassName('tab2');
 
-			<div class="show-code">
-				<div class="tips"> 内容铺满是否换行，换行<code> .flex-wrap </code> </div>
-				<pre>
-							<code></code>
-						</pre>
-			</div>
-			<div class="preview hide">
-				<div class="tips"> 效果 </div>
-				<div class="flex flex-wrap">
-					<div> item 1 </div>
-					<div> item 2 </div>
-					<div> item 3 </div>
-					<div> item 4 </div>
-					<div> item 5 </div>
-					<div> item 6 </div>
-					<div> item 7 </div>
-					<div> item 8 </div>
-				</div>
-			</div>
-		</div>
+                function isArrayLike(o) {
+					if ( o &&
+						typeof o === "object" &&
+						isFinite(o.length) &&
+						o.length >= 0 &&
+						o.length === Math.floor(o.length) &&
+						o.length < 4294967296 ) {
+					    alert("是【类数组对象】");
+					}
+					else {
+                        alert("不是【类数组对象】");
+					}
+                }
 
-		<div class="box">
+                for ( var i = 0; i < tab1.length; i++ ) {
+                    tab1[i].addEventListener('click', function (event) {
+                        console.log(this.parentNode.parentNode.querySelector('.show-code'));
+						var showCode = this.parentNode.parentNode.querySelector('.show-code');
+                        var preview = this.parentNode.parentNode.querySelector('.preview');
 
-            <div class="tabs">
-				<span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
-			</div>
+                        showCode.className = "show-code";
+                        preview.className = "preview hide";
 
-			<div class="show-code">
-				<div class="tips"> 内容铺满是否换行，换行并倒序<code> .flex-wrap-reverse </code> </div>
-				<pre>
-									<code></code>
-								</pre>
-			</div>
-			<div class="preview hide">
-				<div class="tips"> 效果 </div>
-				<div class="flex flex-wrap-reverse">
-					<div> item 1 </div>
-					<div> item 2 </div>
-					<div> item 3 </div>
-					<div> item 4 </div>
-					<div> item 5 </div>
-					<div> item 6 </div>
-					<div> item 7 </div>
-					<div> item 8 </div>
-				</div>
-			</div>
-		</div>
+                        this.className = "tab tab1 active"; // 自身添加 tab tab1 active
+                        this.parentNode.querySelector('.tab2').className = "tab tab2" // tab2 删除 active
+                    } );
+
+                    tab2[i].addEventListener('click', function (event) {
+                        console.log(this.parentNode.parentNode.querySelector('.preview'));
+                        var showCode = this.parentNode.parentNode.querySelector('.show-code');
+                        var preview = this.parentNode.parentNode.querySelector('.preview');
+
+                        showCode.className = "show-code hide";
+                        preview.className = "preview";
+
+                        this.className = "tab tab2 active"; // 自身添加 tab tab2 active
+                        this.parentNode.querySelector('.tab1').className = "tab tab1" // tab1 删除 active
+                    } )
+				}
+
+
+        </script>
+
+
+
+
+<!--
+
 
         <script type="text/javascript">
             function addLoadEvent( func ) {
@@ -571,36 +881,7 @@
 
         </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+-->
 
 
     </body>

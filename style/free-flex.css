@@ -21,6 +21,21 @@
   display: flex;
 }
 
+.flex-inline {
+    /* 混合版本语法: IE 10 */
+    /* 新版本语法: Chrome 21+ */
+    display: -webkit-inline-flex;
+    /* 新版本语法: Opera 12.1, Firefox 22+ */
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    box-sizing: border-box;
+    display: inline-flex;
+}
+
 .flex-full { /* 100%宽度的全局flex容器 */
   display: -webkit-box;
   /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
@@ -58,22 +73,27 @@
 }
 
 .flex-row-reverse { /* flex row 行内容反转 */
+    -webkit-flex-direction: row-reverse;
     flex-direction: row-reverse;
 }
 
 .flex-col-reverse { /* flex column 列内容反转 */
+    -webkit-flex-direction: column-reverse;
     flex-direction: column-reverse;
 }
 
 .flex-nowrap { /* flex容器 不换行 */
+    -webkit-flex-wrap: nowrap;
     flex-wrap: nowrap;
 }
 
 .flex-wrap { /* flex容器 换行 */
+    -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
 }
 
 .flex-wrap-reverse { /* flex容器 并倒序 */
+    -webkit-flex-wrap: wrap-reverse;
     flex-wrap: wrap-reverse;
 }
 
