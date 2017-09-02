@@ -271,7 +271,6 @@
 				}
 			}
 
-
 		</style>
     </head>
     <body>
@@ -317,7 +316,7 @@
                     </div>
                 </div>
             </div>
-            <div class="by-the-way"> Tips : 每个div子项都添加了一定的边框和背景颜色。下同 </div>
+            <div class="by-the-way"> Tips : 每个 div 子项都添加了一定的边框和背景颜色。下同 </div>
 		</div>
 
         <div class="section">
@@ -400,7 +399,7 @@
 		</div>
 
 		<div class="box">
-            <div class="tips"> 3、flex方向，从左到右 <code> .flex-row </code> （默认） </div>
+            <div class="tips"> 3、flex 方向，从【左】到【右】 <code> .flex-row </code> （默认） </div>
             <div  style="min-height: 150px;">
                 <div class="tabs">
                     <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
@@ -423,10 +422,11 @@
                     </div>
                 </div>
             </div>
+            <div class="by-the-way"> Tips：flexbox 默认主轴是一条水平线， 默认方向从左到右 </div>
 		</div>
 
 		<div class="box">
-            <div class="tips"> 4、flex方向，从右到左 <code> .flex-row-reverse </code> </div>
+            <div class="tips"> 4、flex 方向，从【右】到【左】 <code> .flex-row-reverse </code> </div>
             <div style="min-height: 150px;">
                 <div class="tabs">
                     <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
@@ -452,7 +452,7 @@
 		</div>
 
 		<div class="box">
-            <div class="tips"> 5、flex方向，从上到下 <code> .flex-col </code> （默认）</div>
+            <div class="tips"> 5、flex方向，从【上】到【下】 <code> .flex-col </code> （默认）</div>
             <div  style="min-height: 210px;">
                 <div class="tabs">
                     <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
@@ -479,7 +479,7 @@
 		</div>
 
 		<div class="box">
-            <div class="tips"> 6、flex方向，从下到上 <code> .flex-col-reverse </code> </div>
+            <div class="tips"> 6、flex方向，从【下】到【上】 <code> .flex-col-reverse </code> </div>
             <div  style="min-height: 210px;">
                 <div class="tabs">
                     <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
@@ -541,7 +541,7 @@
                     </div>
                 </div>
             </div>
-            <div class="by-the-way"> 本例设置了 max-width: 300px，大屏用户可以更容易看到 nowrap 效果 </div>
+            <div class="by-the-way"> 本例设置了 max-width: 300px 和 overflow: hidden，大屏用户可以更容易看到 wrap 的效果 </div>
 		</div>
 
 		<div class="box">
@@ -604,7 +604,7 @@
                 </pre>
                 </div>
                 <div class="preview hide">
-                    <div class="flex flex-wrap-reverse"  style="max-width: 300px;background-color: #fafafa;">
+                    <div class="flex flex-wrap-reverse"  style="max-width: 280px;background-color: #fafafa;">
                         <div> item 1 </div>
                         <div> item 2 </div>
                         <div> item 3 </div>
@@ -616,7 +616,7 @@
                     </div>
                 </div>
             </div>
-            <div class="by-the-way"> 本例设置了 max-width: 300px，大屏用户可以更容易看到 flex-wrap-reverse 效果 </div>
+            <div class="by-the-way"> 本例设置了 max-width: 280px，大屏用户可以更容易看到 flex-wrap-reverse 效果 </div>
 		</div>
 
 		<div class="box">
@@ -683,9 +683,11 @@
                 开始 <code>.v-start </code>
                 中间 <code>.v-center </code>
                 末尾 <code>.v-end </code>
+                延伸 <code>.v-stretch</code>
+                文字基线对齐 <code>.v-baseline </code>
             </div>
 
-            <div style="min-height: 310px;">
+            <div style="min-height: 500px;">
                 <div class="tabs">
                     <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
                 </div>
@@ -702,6 +704,22 @@
 
     &lt;div class=&quot;flex <span class="highlight">v-end</span>&quot;&gt;
         &lt;div&gt; v-end &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;flex <span class="highlight">v-stretch</span>&quot;&gt;
+        &lt;div&gt; v-stretch &lt;/div&gt;
+    &lt;/div&gt;
+
+   &lt;div class=&quot;flex <span class="highlight">v-baseline</span> &quot;&gt;
+        &lt;div style=&quot;font-size: 24px;&quot;&gt;
+            font size 24
+        &lt;/div&gt;
+        &lt;div style=&quot;font-size: 12px;&quot;&gt;
+            font size 12
+        &lt;/div&gt;
+        &lt;div style=&quot;font-size: 20px;&quot;&gt;
+            font size 20
+        &lt;/div&gt;
     &lt;/div&gt;</code>
                     </pre>
                 </div>
@@ -714,6 +732,17 @@
                     </div>
                     <div class="flex v-end" style="height: 80px;background-color: #fafafa;">
                         <div> v-end </div>
+                    </div>
+                    <div class="flex v-stretch" style="height: 80px;background-color: #fafafa;">
+                        <div> v-stretch </div>
+                    </div>
+                    <div class="flex v-baseline " style="position: relative;height: 80px;background-color: #fafafa;">
+                        <div style="font-size: 24px;"> font size 24  </div>
+                        <div style="font-size: 12px;"> font size 12 </div>
+                        <div style="font-size: 20px;"> font size 20  </div>
+                        <div style="position: absolute;=left: 0;top: 30px;
+                                width: 100%;height: 1px;padding: 0;background-color: #d05;
+                                    transform: scaleY(.5);z-index: 100;"> </div>
                     </div>
 
                 </div>
@@ -936,6 +965,36 @@
             </div>
             <div class="by-the-way"> 目前支持12种比例，.flex-shrink-1 ... .flex-shrink-12  </div>
         </div>
+
+        <div class="box">
+            <div class="tips"> test
+                <code> </code>
+                ...
+                <code> </code>
+            </div>
+            <div style="min-height: 360px;">
+                <div class="tabs">
+                    <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                </div>
+                <div class="show-code">
+                    <pre>
+                <code></code>
+                    </pre>
+                    <pre>
+                <code></code>
+                    </pre>
+                </div>
+                <div class="preview hide">
+                    <div class="flex"  style="height:100px;margin:2px auto 0;background-color: #fafafa;">
+                        <div class="c-center "> 1 </div>
+                        <div class="c-center "> 2 </div>
+                        <div class="c-center "> 3 </div>
+                    </div>
+                </div>
+            </div>
+            <div class="by-the-way"> XXXX </div>
+        </div>
+
 
 
 

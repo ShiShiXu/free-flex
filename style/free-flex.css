@@ -155,6 +155,42 @@
   justify-content: space-around;
 }
 
+
+
+
+.c-start {
+    align-content: flex-start;
+}
+
+.c-center {
+    align-content: center;
+}
+
+.c-end {
+    align-content:  flex-end;
+}
+
+.c-between {
+    align-content: space-between;
+}
+
+.c-space-around {
+    align-content: space-around;
+}
+
+.c-stretch {
+    align-content: stretch;
+}
+
+
+
+
+
+
+
+
+
+
 .v-start { /* 垂直置顶，写在父容器身上 */
   -webkit-box-align: start;
   -ms-flex-align: start;
@@ -175,6 +211,24 @@
   -webkit-align-items: flex-end;
   align-items: flex-end;
 }
+
+.v-stretch { /* 延伸 */
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    -webkit-align-items: stretch;
+    align-items: stretch;
+}
+
+.v-baseline { /* 垂直置底，写在父容器身上 */
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    -webkit-align-items: baseline;
+    align-items: baseline;
+}
+
+
+
+
 
 .self-start { /* 自己置顶，写在自己身上 */
   -webkit-align-self: flex-start;
