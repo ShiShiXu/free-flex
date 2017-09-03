@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html >
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta content="yes" name="apple-mobile-web-app-capable">
+      <meta name="viewport"
+            content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+      <link rel="stylesheet" href="./style/free-flex.css">
+      <link rel="stylesheet" href="./style/h5.css">
+      <title>Free Flex </title>
+		<style>
+			* {
+				color: #333;
+				font-size: 14px;
+			}
+			body {
+                position: relative;
+                padding: 20px 6px 0;
+			}
+
+			.title-guide {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                text-align: center;
+                padding: 6px 0;
+                background: linear-gradient(#fff, rgba(255, 255, 255, 0.88));
+                /*background: linear-gradient(rgb(225, 246, 253), rgba(247, 227, 227, 0.8));*/
+                z-index: 100;
+			}
+
+			.title-guide span:nth-child(1){
+				font-size: 24px;
+				font-weight: bold;
+				color: #1FA2D6;
+			}
+			.title-guide span:nth-child(2) {
+                position: relative;
+				font-size: 24px;
+				font-weight: bold;
+				color: #d05;
+			}
+            .title-guide span:nth-child(2) > span {
+                position: absolute;
+                bottom: 2px;
+                right: -24px;
+                font-size: 14px;
+                color: #999;
+			}
+
+            .section {
+                text-align: center;
+                padding-bottom: 20px;
+            }
+
+            .section-free {
+                color: #1FA2D6;
+            }
+            .section-flex {
+                color: #d05;
+            }
+
+			.highlight {
+				font-size: 12px;
+				font-family: Monaco,Menlo,Consolas,"Courier New",FontAwesome,monospace;
+				color: #d05;
+			}
+
+            .raw > div {
+                margin: 6px 10px;
+                max-width: 100%;
+                overflow: hidden;
+            }
+            .raw > div > div {
+                margin: 2px;
+                padding: 8px;
+                background: #fafafa;
+                color: #999;
+                border: 1px solid rgba(229, 229, 229, 0.5);
+                border-radius: 4px;
+            }
+
+			.detail {
+				margin-top: 20px;
+				margin-bottom: 20px;
+				text-align: center;
+			}
+
+			.detail div {
+				color: #999;
+				font-size: 12px;
+			}
+
+			.detail span {
+				color: #999;
+				font-size: 12px;
+				margin-left: 10px;
+			}
+
+			hr {
+				box-sizing: content-box;
+				height: 0;
+				margin: 15px 0;
+				border: 0;
+				border-top: 1px solid #e5e5e5;
+				transform: scaleY(.5);
+			}
+
+			pre code {
+				font-size: 12px;
+				font-family: Monaco,Menlo,Consolas,"Courier New",FontAwesome,monospace;
+				color: #999;
+				border-radius: 3px;
+				background: #f8f8f8;
+			}
+
+			.toggle_js img {
+				display: block;
+			}
+
+			.box {
+				position: relative;
+				padding: 10px 0 40px 0;
+			}
+
+			.box::after {
+				position: absolute;
+				content: " ";
+				left: 0;
+				bottom: 20px;
+				width: 100%;
+				height: 1px;
+				background-color: #e5e5e5;
+				transform: scaleY(.5);
+			}
+
+
+			.tabs {
+				position: relative;
+				margin: 10px 10px 0;
+				background: #f8f8f8;
+				border-bottom: 1px solid #d1d1d1;
+				height: 30px;
+			}
+			.tab {
+				position: relative;
+				padding: 0 24px;
+				height: 100%;
+				line-height: 30px;
+				display: inline-block;
+			}
+
+			.active {
+				display: inline-block;
+			}
+			.tab.active::after  {
+				position: absolute;
+				bottom: -1px;
+				left: 0;
+				content: " ";
+				width: 100%;
+				height: 1px;
+				background-color: #1FA2D6;
+				z-index: 10;
+                transform: scaleY(1.2);
+			}
+
+			.hide {
+				display: none;
+			}
+
+			.tips {
+				position: relative;
+				margin: 4px 10px;
+				padding: 8px 8px;
+				background: #eff6f9;
+				font-size: 12px;
+                line-height: 20px;
+				color: #999;
+				font-style: italic;
+			}
+
+			code, .tips code {
+				font-size: 12px;
+				font-family: Monaco,Menlo,Consolas,"Courier New",FontAwesome,monospace;
+				color: #d05;
+				border-radius: 3px;
+				background: #fafafa;
+				padding: 0 3px 0 2px;
+			}
+
+			.by-the-way code {
+				font-size: 12px;
+				font-family: Monaco,Menlo,Consolas,"Courier New",FontAwesome,monospace;
+				color: #999;
+				border-radius: 3px;
+				background: #fafafa;
+				padding: 0 3px 0 2px;
+			}
+
+            .show-code, .preview {
+                padding: 0 10px;
+            }
+
+			.preview .flex, .preview > div {
+				max-width: 100%;
+				overflow: hidden;
+                margin-top: 10px;
+                /*background: #fbf6f9;*/
+			}
+
+			.preview .flex > div, .preview > div > div {
+				margin: 2px;
+				padding: 8px;
+				background: #fafafa;
+				color: #999;
+				border: 1px solid rgba(229, 229, 229, 0.5);
+				border-radius: 4px;
+			}
+
+			.show-code > pre {
+				height: auto;
+				background-color: #f8f8f8;
+				border-radius: 4px;
+				tab-size: 4;
+				border: 1px solid rgba(229, 229, 229, 0.2);
+			}
+
+			.box .by-the-way {
+				font-size: 12px;
+                line-height: 20px;
+                font-style: italic;
+				color: #999;
+                margin : 10px 0 0;
+                padding: 0 10px;
+			}
+
+            .before, .after {
+                padding-left: 10px;
+                font-size: 12px;
+                color: #999;
+            }
+
+            .copyright {
+                font-size: 12px;
+                font-style: italic;
+                color: #999;
+                text-align: center;
+                padding-bottom: 20px;
+            }
+            .copyright a {
+                display: inline-block;
+                font-size: 12px;
+                color: #999;
+                text-align: center;
+                font-style: italic;
+                text-decoration: none;
+            }
+
+            .github {
+                width: 26px;
+                height: 16px;
+                padding-left: 10px;
+                vertical-align: bottom;
+            }
+
+            .github img {
+                display: block;
+            }
+
+			@media screen and ( max-width: 320px ) {
+                body {
+                    padding: 20px 6px 0;
+                }
+				pre code {
+					font-size: 10px;
+				}
+				.highlight {
+					font-size: 10px;
+				}
+			}
+
+		</style>
+    </head>
+    <body>
+
+		<div id="title-guide" class="title-guide">
+			<span> Free </span>
+			<span> Flex  <span> 1.0 </span> </span>
+		</div>
+
+
+		<div class="detail"><!--
+			<div>主轴（main axis）方向：水平、默认从左到右</div>
+			<div>侧轴（cross axis）方向：垂直、默认从上到下</div>-->
+			<span> iOS 8.2+ </span>
+			<span>Android 4.1+ </span>
+		</div>
+
+		<hr>
+
+        <div class="section"> 不使用 flexbox </div>
+
+		<div class="box">
+            <div class="tips">原味的感觉 ORZ</div>
+            <div style="min-height: 180px;">
+                <div class="tabs">
+                    <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                </div>
+                <div class="show-code">
+                    <pre>
+                <code>
+    &lt;div&gt;
+        &lt;div&gt; 1 &lt;/div&gt;
+        &lt;div&gt; 2 &lt;/div&gt;
+        &lt;div&gt; 3 &lt;/div&gt;
+    &lt;/div&gt;</code>
+                </pre>
+                </div>
+                <div class="preview hide">
+                    <div>
+                        <div> 1 </div>
+                        <div> 2 </div>
+                        <div> 3 </div>
+                    </div>
+                </div>
+            </div>
+            <div class="by-the-way"> Tips : 每个 div 子项都添加了一定的边框和背景颜色。下同 </div>
+		</div>
+
+        <div class="section">
+            <span class="section-free"> Free </span>
+            <span class="section-flex"> Flex </span>
+            基础
+        </div>
+
+        <div class="box" >
+            <div class="tips"> 1、父容器上添加基础类 <code>.flex </code> </div>
+                <div style="min-height: 170px;">
+                    <div class="tabs">
+                        <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                    </div>
+
+                    <div class="show-code">
+                        <pre>
+                    <code>
+    &lt;div class=&quot;<span class="highlight">flex</span>&quot;&gt;
+        &lt;div&gt; 1 &lt;/div&gt;
+        &lt;div&gt; 2 &lt;/div&gt;
+        &lt;div&gt; 3 &lt;/div&gt;
+    &lt;/div&gt;</code>
+                        </pre>
+                    </div>
+                    <div class="preview hide">
+                        <div class="flex">
+                            <div> 1 </div>
+                            <div> 2 </div>
+                            <div> 3 </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+		<div class="box" >
+            <div class="tips"> 2、子项按比列分配 <code>.flex1</code> ... <code>.flex12</code> </div>
+            <div style="min-height: 270px;">
+                <div class="tabs">
+                    <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                </div>
+                <div class="show-code">
+                <pre>
+                <code>
+    &lt;div class=&quot;flex&quot;&gt;
+        &lt;div class=&quot;<span class="highlight">flex1</span>&quot;&gt; 1 &lt;/div&gt;
+        &lt;div class=&quot;<span class="highlight">flex2</span>&quot;&gt; 2 &lt;/div&gt;
+        &lt;div class=&quot;<span class="highlight">flex3</span>&quot;&gt; 3 &lt;/div&gt;
+    &lt;/div&gt;</code>
+                </pre>
+                <pre>
+                <code>
+    &lt;div class=&quot;flex&quot;&gt;
+        &lt;div class=&quot;<span class="highlight">flex6</span>&quot;&gt; 6 &lt;/div&gt;
+        &lt;div class=&quot;<span class="highlight">flex12</span>&quot;&gt; 12 &lt;/div&gt;
+    &lt;/div&gt;</code>
+                </pre>
+                </div>
+                <div class="preview hide">
+                    <div class="flex">
+                        <div class="flex1"> 1 </div>
+                        <div class="flex2"> 2 </div>
+                        <div class="flex3"> 3 </div>
+                    </div>
+                    <div class="flex">
+                        <div class="flex6"> 6 </div>
+                        <div class="flex12"> 12 </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="by-the-way">  目前拥有12种类：
+                <code> .flex1 </code>
+                <code> .flex2 </code>
+                ...
+                <code> .flex11 </code>
+                <code> .flex12 </code>
+            </div>
+
+		</div>
+
+		<div class="box">
+            <div class="tips"> 3、flex 主轴方向：水平——从【左】到【右】，起点在左边 <code> .flex-row </code> （默认） </div>
+            <div  style="min-height: 150px;">
+                <div class="tabs">
+                    <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                </div>
+                <div class="show-code">
+                <pre>
+                    <code>
+    &lt;div class=&quot;flex <span class="highlight">flex-row</span>&quot;&gt;
+        &lt;div&gt; 1 &lt;/div&gt;
+        &lt;div&gt; 2 &lt;/div&gt;
+        &lt;div&gt; 3 &lt;/div&gt;
+    &lt;/div&gt;</code>
+                </pre>
+                </div>
+                <div class="preview hide">
+                    <div class="flex flex-row">
+                        <div> 1 </div>
+                        <div> 2 </div>
+                        <div> 3 </div>
+                    </div>
+                </div>
+            </div>
+            <div class="by-the-way"> Tips：Flexbox 默认主轴是一条水平线， 方向从左到右 </div>
+		</div>
+
+		<div class="box">
+            <div class="tips"> 4、flex 主轴方向：水平——从【右】到【左】，起点在右边 <code> .flex-row-reverse </code> </div>
+            <div style="min-height: 150px;">
+                <div class="tabs">
+                    <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                </div>
+                <div class="show-code">
+                <pre>
+                <code>
+    &lt;div class=&quot;flex <span class="highlight">flex-row-reverse</span>&quot;&gt;
+        &lt;div&gt; 1 &lt;/div&gt;
+        &lt;div&gt; 2 &lt;/div&gt;
+        &lt;div&gt; 3 &lt;/div&gt;
+    &lt;/div&gt;</code>
+                </pre>
+                </div>
+                <div class="preview hide">
+                    <div class="flex flex-row-reverse">
+                        <div> 1 </div>
+                        <div> 2 </div>
+                        <div> 3 </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+
+		<div class="box">
+            <div class="tips"> 5、flex 主轴方向：垂直——从【上】到【下】，起点在上方 <code> .flex-col </code> </div>
+            <div  style="min-height: 210px;">
+                <div class="tabs">
+                    <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                </div>
+                <div class="show-code">
+                <pre>
+                <code>
+    &lt;div class=&quot;flex <span class="highlight">flex-col</span>&quot;&gt;
+        &lt;div&gt; 1 &lt;/div&gt;
+        &lt;div&gt; 2 &lt;/div&gt;
+        &lt;div&gt; 3 &lt;/div&gt;
+    &lt;/div&gt;</code>
+                </pre>
+                </div>
+                <div class="preview hide">
+                    <div class="flex flex-col" style="height: 160px;">
+                        <div> 1 </div>
+                        <div> 2 </div>
+                        <div> 3 </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+
+		<div class="box">
+            <div class="tips"> 6、flex 主轴方向：垂直——从【下】到【上】，起点在下方 <code> .flex-col-reverse </code> </div>
+            <div  style="min-height: 210px;">
+                <div class="tabs">
+                    <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                </div>
+                <div class="show-code">
+                <pre>
+                <code>
+    &lt;div class=&quot;flex <span class="highlight">flex-col-reverse</span>&quot;&gt;
+        &lt;div&gt; 1 &lt;/div&gt;
+        &lt;div&gt; 2 &lt;/div&gt;
+        &lt;div&gt; 3 &lt;/div&gt;
+    &lt;/div&gt;</code>
+                </pre>
+                </div>
+                <div class="preview hide">
+                    <div class="flex flex-col-reverse" style="height: 160px;">
+                        <div> 1 </div>
+                        <div> 2 </div>
+                        <div> 3 </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+
+		<div class="box">
+            <div class="tips"> 7、内容铺满是否换行：不换行 <code>.flex-nowrap </code> （默认） </div>
+
+            <div style="min-height: 230px;">
+                <div class="tabs">
+                    <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                </div>
+
+                <div class="show-code">
+                <pre>
+                <code>
+    &lt;div class=&quot;flex <span class="highlight">flex-nowrap</span>&quot;&gt;
+        &lt;div&gt; item 1 &lt;/div&gt;
+        &lt;div&gt; item 2 &lt;/div&gt;
+        &lt;div&gt; item 3 &lt;/div&gt;
+        &lt;div&gt; item 4 &lt;/div&gt;
+        &lt;div&gt; item 5 &lt;/div&gt;
+        &lt;div&gt; item 6 &lt;/div&gt;
+        &lt;div&gt; item 7 &lt;/div&gt;
+        &lt;div&gt; item 8 &lt;/div&gt;
+    &lt;/div&gt;</code>
+                </pre>
+                </div>
+                <div class="preview hide">
+                    <div class="flex flex-nowrap" style="max-width: 280px;background-color: #fafafa;">
+                        <div> item 1 </div>
+                        <div> item 2 </div>
+                        <div> item 3 </div>
+                        <div> item 4 </div>
+                        <div> item 5 </div>
+                        <div> item 6 </div>
+                        <div> item 7 </div>
+                        <div> item 8 </div>
+                    </div>
+                </div>
+            </div>
+            <div class="by-the-way"> 本例设置了 max-width: 280px 和 overflow: hidden，大屏用户可以更容易看到 nowrap 的效果 </div>
+		</div>
+
+		<div class="box">
+            <div class="tips"> 8、内容铺满是否换行：换行 <code>.flex-wrap </code> </div>
+            <div style="min-height: 230px;">
+                <div class="tabs">
+                    <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                </div>
+                <div class="show-code">
+                <pre>
+                <code>
+    &lt;div class=&quot;flex <span class="highlight">flex-wrap</span>&quot;&gt;
+        &lt;div&gt; item 1 &lt;/div&gt;
+        &lt;div&gt; item 2 &lt;/div&gt;
+        &lt;div&gt; item 3 &lt;/div&gt;
+        &lt;div&gt; item 4 &lt;/div&gt;
+        &lt;div&gt; item 5 &lt;/div&gt;
+        &lt;div&gt; item 6 &lt;/div&gt;
+        &lt;div&gt; item 7 &lt;/div&gt;
+        &lt;div&gt; item 8 &lt;/div&gt;
+    &lt;/div&gt;</code>
+                </pre>
+                </div>
+                <div class="preview hide">
+                    <div class="flex flex-wrap" style="max-width: 280px;background-color: #fafafa;">
+                        <div> item 1 </div>
+                        <div> item 2 </div>
+                        <div> item 3 </div>
+                        <div> item 4 </div>
+                        <div> item 5 </div>
+                        <div> item 6 </div>
+                        <div> item 7 </div>
+                        <div> item 8 </div>
+                    </div>
+                </div>
+            </div>
+            <div class="by-the-way">  本例设置了 max-width: 280px 和 overflow: hidden，大屏用户可以更容易看到 wrap 的效果 </div>
+		</div>
+
+		<div class="box">
+            <div class="tips"> 9、内容铺满是否换行：换行并反向 <code>.flex-wrap-reverse </code> </div>
+
+            <div style="min-height: 230px;">
+                <div class="tabs">
+                    <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                </div>
+                <div class="show-code">
+                <pre>
+                <code>
+    &lt;div class=&quot;flex <span class="highlight">flex-wrap-reverse</span>&quot;&gt;
+        &lt;div&gt; item 1 &lt;/div&gt;
+        &lt;div&gt; item 2 &lt;/div&gt;
+        &lt;div&gt; item 3 &lt;/div&gt;
+        &lt;div&gt; item 4 &lt;/div&gt;
+        &lt;div&gt; item 5 &lt;/div&gt;
+        &lt;div&gt; item 6 &lt;/div&gt;
+        &lt;div&gt; item 7 &lt;/div&gt;
+        &lt;div&gt; item 8 &lt;/div&gt;
+    &lt;/div&gt;</code>
+                </pre>
+                </div>
+                <div class="preview hide">
+                    <div class="flex flex-wrap-reverse"  style="max-width: 280px;background-color: #fafafa;">
+                        <div> item 1 </div>
+                        <div> item 2 </div>
+                        <div> item 3 </div>
+                        <div> item 4 </div>
+                        <div> item 5 </div>
+                        <div> item 6 </div>
+                        <div> item 7 </div>
+                        <div> item 8 </div>
+                    </div>
+                </div>
+            </div>
+            <div class="by-the-way"> 本例设置了 max-width: 280px，大屏用户可以更容易看到 flex-wrap-reverse 效果 </div>
+		</div>
+
+		<div class="box">
+            <div class="tips">10、主轴对齐方式：
+                开始 <code>.main-start </code>
+                中间 <code>.main-center </code>
+                末尾 <code>.main-end </code>
+                围绕 <code>.main-around </code>
+                两端 <code>.main-between </code>
+            </div>
+            <div style="min-height: 370px;">
+                <div class="tabs">
+                    <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                </div>
+                <div class="show-code">
+                <pre>
+                <code>
+    &lt;div class=&quot;flex <span class="highlight">main-start</span>&quot;&gt;
+        &lt;div&gt; main-start &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;flex <span class="highlight">main-center</span>&quot;&gt;
+        &lt;div&gt; main-center &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;flex <span class="highlight">main-end</span>&quot;&gt;
+        &lt;div&gt; main-end &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;flex <span class="highlight">main-around</span>&quot;&gt;
+        &lt;div&gt; main-end &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;flex <span class="highlight">main-between</span>&quot;&gt;
+        &lt;div&gt; main-end &lt;/div&gt;
+    &lt;/div&gt;</code>
+                </pre>
+                </div>
+                <div class="preview hide">
+                    <div class="flex main-start" style="background-color: #fafafa;">
+                        <div> main-start </div>
+                    </div>
+                    <div class="flex main-center" style="background-color: #fafafa;">
+                        <div> main-center </div>
+                    </div>
+                    <div class="flex main-end" style="background-color: #fafafa;">
+                        <div> main-end </div>
+                    </div>
+                    <div class="flex main-around " style="background-color: #fafafa;">
+                        <div> main-around </div>
+                        <div> main-around </div>
+                    </div>
+                    <div class="flex main-between" style="background-color: #fafafa;">
+                        <div> main-between </div>
+                        <div> main-between </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+
+		<div class="box">
+            <div class="tips">11、侧轴对齐方式：
+                开始 <code>.cross-start </code>
+                中间 <code>.cross-center </code>
+                末尾 <code>.cross-end </code>
+                延伸 <code>.cross-stretch</code>
+                文字基线对齐 <code>.cross-baseline </code>
+            </div>
+
+            <div style="min-height: 500px;">
+                <div class="tabs">
+                    <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                </div>
+                <div class="show-code">
+                    <pre>
+                    <code>
+    &lt;div class=&quot;flex <span class="highlight">cross-start</span>&quot;&gt;
+        &lt;div&gt; cross-start &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;flex <span class="highlight">cross-center</span>&quot;&gt;
+        &lt;div&gt; cross-center &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;flex <span class="highlight">cross-end</span>&quot;&gt;
+        &lt;div&gt; cross-end &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;flex <span class="highlight">cross-stretch</span>&quot;&gt;
+        &lt;div&gt; cross-stretch &lt;/div&gt;
+    &lt;/div&gt;
+
+   &lt;div class=&quot;flex <span class="highlight">cross-baseline</span>&quot;&gt;
+        &lt;div style=&quot;font-size: 24px;&quot;&gt;
+            font size 24
+        &lt;/div&gt;
+        &lt;div style=&quot;font-size: 12px;&quot;&gt;
+            font size 12
+        &lt;/div&gt;
+        &lt;div style=&quot;font-size: 20px;&quot;&gt;
+            font size 20
+        &lt;/div&gt;
+    &lt;/div&gt;</code>
+                    </pre>
+                </div>
+                <div class="preview hide">
+                    <div class="flex cross-start" style="height: 80px;background-color: #fafafa;">
+                        <div> cross-start </div>
+                    </div>
+                    <div class="flex cross-center" style="height: 80px;background-color: #fafafa;">
+                        <div> cross-center </div>
+                    </div>
+                    <div class="flex cross-end" style="height: 80px;background-color: #fafafa;">
+                        <div> cross-end </div>
+                    </div>
+                    <div class="flex cross-stretch" style="height: 80px;background-color: #fafafa;">
+                        <div> cross-stretch </div>
+                    </div>
+                    <div class="flex cross-baseline " style="position: relative;height: 80px;background-color: #fafafa;">
+                        <div style="font-size: 24px;"> font size 24  </div>
+                        <div style="font-size: 12px;"> font size 12 </div>
+                        <div style="font-size: 20px;"> font size 20  </div>
+                        <div style="position: absolute;=left: 0;top: 30px;
+                                width: 100%;height: 1px;padding: 0;background-color: #d05;
+                                    transform: scaleY(.5);z-index: 100;"> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="by-the-way"> 当使用 .flex-col 或者 flex-col-reverse 改变主轴方向后，此时的主轴变成垂直线，侧轴变水平线。这点需要注意  </div>
+		</div>
+
+		<div class="box">
+            <div class="tips">12、侧轴对齐：
+                写在子容器上
+                开始 <code>.self-start </code>
+                中间 <code>.self-center </code>
+                末尾 <code>.self-end </code>
+            </div>
+            <div style="min-height: 336px;">
+                <div class="tabs">
+                    <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                </div>
+                <div class="show-code">
+                <pre>
+                <code>
+    &lt;div class=&quot;flex&quot;&gt;
+        &lt;div class=&quot;<span class="highlight">self-start</span>&quot;&gt;
+            self-start
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;flex&quot;&gt;
+        &lt;div class=&quot;<span class="highlight">self-center</span>&quot;&gt;
+            self-center
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;flex&quot;&gt;
+        &lt;div class=&quot;<span class="highlight">self-end</span>&quot;&gt;
+            self-end
+        &lt;/div&gt;
+    &lt;/div&gt;</code>
+                </pre>
+                </div>
+                <div class="preview hide">
+                    <div class="flex" style="height: 80px;background-color: #fafafa;">
+                        <div class="self-start">
+                            self-start
+                        </div>
+                    </div>
+                    <div class="flex" style="height: 80px;background-color: #fafafa;">
+                        <div class="self-center">
+                            self-center
+                        </div>
+                    </div>
+                    <div class="flex" style="height: 80px;background-color: #fafafa;">
+                        <div class="self-end">
+                            self-end
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="by-the-way"> 和上例
+                <code> .cross-start </code>
+                <code> .cross-center </code>
+                <code> .cross-end </code> 效果一样
+            </div>
+		</div>
+
+		<div class="box">
+            <div class="tips">13、主轴和侧轴同时居中：
+                <code> .both-center </code>
+            </div>
+            <div style="min-height: 120px;">
+                <div class="tabs">
+                    <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                </div>
+                <div class="show-code">
+                    <pre>
+                    <code>
+    &lt;div class=&quot;flex <span class="highlight">both-center</span>&quot;&gt;
+        &lt;div&gt; both-center &lt;/div&gt;
+    &lt;/div&gt;</code>
+                    </pre>
+                </div>
+                <div class="preview hide">
+                    <div class="flex both-center cross-center" style="height: 80px;background-color: #fafafa;">
+                        <div> both-center </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+
+        <div class="section">
+            <span class="section-free"> Free </span>
+            <span class="section-flex"> Flex </span>
+            高级
+        </div>
+
+        <div class="box">
+            <div class="tips"> 1、放大比例（当子容器比父容器小，子容器应当如何放大）
+                <code> .flex-grow-1 </code>
+                ...
+                <code> .flex-grow-12 </code>
+            </div>
+            <div style="min-height: 390px;">
+                <div class="tabs">
+                    <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                </div>
+                <div class="show-code">
+                    <pre>
+                <code>
+    添加前
+    &lt;div class=&quot;flex&quot; &gt;
+        &lt;div&gt; flex-grow-1 &lt;/div&gt;
+        &lt;div&gt; flex-grow-2 &lt;/div&gt;
+        &lt;div&gt; flex-grow-1 &lt;/div&gt;
+    &lt;/div&gt;</code>
+                    </pre>
+                    <pre>
+                    <code>
+    添加后
+    &lt;div class=&quot;flex&quot;&gt;
+        &lt;div class=&quot;<span class="highlight">flex-grow-1</span>&quot;&gt;
+            flex-grow-1
+        &lt;/div&gt;
+        &lt;div class=&quot;<span class="highlight">flex-grow-2</span>&quot;&gt;
+            flex-grow-2
+        &lt;/div&gt;
+        &lt;div class=&quot;<span class="highlight">flex-grow-1</span>&quot;&gt;
+            flex-grow-1
+        &lt;/div&gt;
+    &lt;/div&gt;</code>
+                    </pre>
+                </div>
+                <div class="preview hide">
+                    <div class="before"> 添加前 </div>
+                    <div class="flex" style="width:280px;margin:2px auto 0;background-color: #fafafa;">
+                        <div style="width: 60px;margin: 0;"> flex-grow-1 </div>
+                        <div style="width: 60px;margin: 0;"> flex-grow-2 </div>
+                        <div style="width: 60px;margin: 0;"> flex-grow-1 </div>
+                    </div>
+
+                    <div class="after"> 添加后 </div>
+                    <div class="flex" style="width:280px;margin:2px auto 0;background-color: #fafafa;">
+                        <div class="flex-grow-1" style="width: 60px;margin: 0;"> flex-grow-1 </div>
+                        <div class="flex-grow-2" style="width: 60px;margin: 0;"> flex-grow-2 </div>
+                        <div class="flex-grow-1" style="width: 60px;margin: 0;"> flex-grow-1 </div>
+                    </div>
+                </div>
+            </div>
+            <div class="by-the-way">  计算方法：<br>
+                本例设置容器宽 280px，每个子元素宽 60px <br>
+                父容器有剩余：<br>
+                280 - ( 60 + 60 + 60 ) = 100 px ; <br>
+                根据 flex-grow 比例放大的尺寸（每份）：<br>
+                100 / ( 1 + 2 + 1 ) = 25 px ; <br>
+                最终子元素宽度： <br>
+                ( 60 + 25 )px 、 ( 60 + 25*2 )px 和 ( 60 + 25 )px , 总共刚好 280 px <br>
+                具体请 Chrome Developer Tools 看一下
+            </div>
+            <div class="by-the-way"> 目前拥有12种类，.flex-grow-1 ... .flex-grow-12  </div>
+        </div>
+
+        <div class="box">
+            <div class="tips"> 2、缩小比例（当子容器比父容器大，子容器应当如何缩小）
+                <code> .flex-shrink-1 </code>
+                ...
+                <code> .flex-shrink-12 </code>
+            </div>
+            <div style="min-height: 390px;">
+                <div class="tabs">
+                    <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                </div>
+                <div class="show-code">
+                    <pre>
+                <code>
+    添加前：
+    &lt;div class=&quot;flex&quot;&gt;
+        &lt;div&gt; flex-shrink-1 &lt;/div&gt;
+        &lt;div&gt; flex-shrink-2 &lt;/div&gt;
+        &lt;div&gt; flex-shrink-1 &lt;/div&gt;
+    &lt;/div&gt;</code>
+                    </pre>
+                    <pre>
+                <code>
+     添加后
+     &lt;div class=&quot;flex&quot;&gt;
+        &lt;div class=&quot;<span class="highlight">flex-shrink-1</span>&quot;&gt;
+            flex-shrink-1
+        &lt;/div&gt;
+        &lt;div class=&quot;<span class="highlight">flex-shrink-2</span>&quot;&gt;
+            flex-shrink-2
+        &lt;/div&gt;
+        &lt;div class=&quot;<span class="highlight">flex-shrink-1</span>&quot;&gt;
+            flex-shrink-1
+        &lt;/div&gt;
+    &lt;/div&gt;</code>
+                    </pre>
+                </div>
+                <div class="preview hide">
+                    <div class="before"> 添加前 </div>
+                    <div class="flex" style="width:280px;margin:2px auto 0;background-color: #fafafa;">
+                        <div style="margin: 0;"> flex-shrink-1 </div>
+                        <div style="margin: 0;"> flex-shrink-2 </div>
+                        <div style="margin: 0;"> flex-shrink-1 </div>
+                    </div>
+                    <div class="after"> 添加后 </div>
+                    <div class="flex" style="width:280px;margin:2px auto 0;background-color: #fafafa;">
+                        <div class="flex-shrink-1" style="width: 120px;margin: 0;"> flex-shrink-1 </div>
+                        <div class="flex-shrink-2" style="width: 120px;margin: 0;"> flex-shrink-2 </div>
+                        <div class="flex-shrink-1" style="width: 120px;margin: 0;"> flex-shrink-1 </div>
+                    </div>
+                </div>
+            </div>
+            <div class="by-the-way">  计算方法：<br>
+                本例设置容器宽 280px，每个子元素宽 120px <br>
+                子容器超出父容器： <br>
+                ( 120 + 120 + 120 ) - 280 = 80 px ; <br>
+                根据 flex-shrink  比例缩小的尺寸（每份）： <br>
+                80 / ( 1 + 2 + 1 ) = 20 px ; <br>
+                最终子元素宽度： <br>
+                ( 120 - 20 )px 、 ( 120 - 20*2 )px 和 ( 120 - 20 )px ,  总共刚好 280px  <br>
+                具体请 Chrome Developer Tools 看一下
+            </div>
+            <div class="by-the-way"> 目前拥有12种类，.flex-shrink-1 ... .flex-shrink-12  </div>
+        </div>
+
+        <div class="box">
+            <div class="tips">3、多列对齐：当伸缩容器的侧轴还有多余空间时，如何对齐
+                <code>.content-start </code>
+                <code>.content-center </code>
+                <code>.content-end </code>
+                <code>.content-stretch </code>
+                <code>.content-between </code>
+                <code>.content-space-around </code>
+            </div>
+
+            <div style="min-height: 500px;">
+                <div class="tabs">
+                    <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                </div>
+                <div class="show-code">
+                    <pre>
+                    <code>
+    &lt;div class=&quot;flex <span class="highlight">content-start</span>&quot;&gt;
+        &lt;div&gt; content-start &lt;/div&gt;
+        ...
+        &lt;div&gt; content-start &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;flex <span class="highlight">content-center</span>&quot;&gt;
+        &lt;div&gt; content-center &lt;/div&gt;
+        ...
+        &lt;div&gt; content-center &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;flex <span class="highlight">content-end</span>&quot;&gt;
+        &lt;div&gt; content-end &lt;/div&gt;
+        ...
+        &lt;div&gt; content-end &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;flex <span class="highlight">content-stretch</span>&quot;&gt;
+        &lt;div&gt; content-stretch &lt;/div&gt;
+        ...
+        &lt;div&gt; content-stretch &lt;/div&gt;
+    &lt;/div&gt;
+
+   &lt;div class=&quot;flex <span class="highlight">content-between</span>&quot;&gt;
+        &lt;div&quot;&gt; content-between &lt;/div&gt;
+        ...
+        &lt;div&quot;&gt; content-between &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;flex <span class="highlight">content-space-around</span>&quot;&gt;
+        &lt;div&gt; content-space-around &lt;/div&gt;
+        ...
+        &lt;div&gt; content-space-around &lt;/div&gt;
+    &lt;/div&gt;</code>
+                    </pre>
+                </div>
+                <div class="preview hide">
+                    <div class="flex flex-wrap content-start" style="max-width:280px;height:130px;margin:4px auto;background-color: #fafafa;">
+                        <div> content-start </div>
+                        <div> content-start </div>
+                        <div> content-start </div>
+                        <div> content-start </div>
+                    </div>
+                    <div class="flex flex-wrap content-center" style="max-width:280px;height:130px;margin:4px auto;background-color: #fafafa;">
+                        <div> content-center </div>
+                        <div> content-center </div>
+                        <div> content-center </div>
+                        <div> content-center </div>
+                    </div>
+                    <div class="flex flex-wrap content-end" style="max-width:280px;height:130px;margin:4px auto;background-color: #fafafa;">
+                        <div> content-end </div>
+                        <div> content-end </div>
+                        <div> content-end </div>
+                        <div> content-end </div>
+                    </div>
+                    <div class="flex flex-wrap content-stretch" style="max-width:280px;height:130px;margin:4px auto;background-color: #fafafa;">
+                        <div> content-stretch </div>
+                        <div> content-stretch </div>
+                        <div> content-stretch </div>
+                        <div> content-stretch </div>
+                    </div>
+                    <div class="flex flex-wrap content-between" style="max-width:280px;height:130px;margin:4px auto;background-color: #fafafa;">
+                        <div> content-between </div>
+                        <div> content-between </div>
+                        <div> content-between </div>
+                        <div> content-between </div>
+                    </div>
+                    <div class="flex flex-wrap content-space-around" style="max-width:280px;height:180px;margin:4px auto;background-color: #fafafa;">
+                        <div> content-space-around </div>
+                        <div> content-space-around </div>
+                        <div> content-space-around </div>
+                        <div> content-space-around </div>
+                    </div>
+                </div>
+            </div>
+            <div class="by-the-way"> Tips：本例设置了父容器最大宽度 280px，大屏幕用户更容易看到效果。<br>
+                .content-* 类会在元素上添加相应的 align-content 属性和值， 但 align-content在只有一行的伸缩容器上没有效果，所以本例同时加上 .flex-wrap 让子元素换行。  </div>
+        </div>
+
+
+        <div class="copyright"> &copy; 2017
+            <a href="http://www.kidsir.com" target="_blank"> 势仔仔 </a>
+            <a class="github" href="https://github.com/ShiShiXu/free-flex" target="_blank">
+                <img src="./images/github.svg" width="14" height="14">
+            </a>
+        </div>
+
+        <script src="./js/fastclick.min.js"></script>
+        <script type="text/javascript">
+				if ('addEventListener' in document) {
+					document.addEventListener('DOMContentLoaded', function() {
+						FastClick.attach(document.body);
+					}, false);
+				}
+                var tab1 = document.getElementsByClassName('tab1');
+                var tab2 = document.getElementsByClassName('tab2');
+                function isArrayLike(o) {
+					if ( o &&
+						typeof o === "object" &&
+						isFinite(o.length) &&
+						o.length >= 0 &&
+						o.length === Math.floor(o.length) &&
+						o.length < 4294967296 ) {
+					    alert("是【类数组对象】");
+					}
+					else {
+                        alert("不是【类数组对象】");
+					}
+                }
+                for ( var i = 0; i < tab1.length; i++ ) {
+                    tab1[i].addEventListener('click', function (event) {
+                        console.log(this.parentNode.parentNode.querySelector('.show-code'));
+						var showCode = this.parentNode.parentNode.querySelector('.show-code');
+                        var preview = this.parentNode.parentNode.querySelector('.preview');
+
+                        showCode.className = "show-code";
+                        preview.className = "preview hide";
+
+                        this.className = "tab tab1 active"; // 自身添加 tab tab1 active
+                        this.parentNode.querySelector('.tab2').className = "tab tab2" // tab2 删除 active
+                    } );
+
+                    tab2[i].addEventListener('click', function (event) {
+                        console.log(this.parentNode.parentNode.querySelector('.preview'));
+                        var showCode = this.parentNode.parentNode.querySelector('.show-code');
+                        var preview = this.parentNode.parentNode.querySelector('.preview');
+
+                        showCode.className = "show-code hide";
+                        preview.className = "preview";
+
+                        this.className = "tab tab2 active"; // 自身添加 tab tab2 active
+                        this.parentNode.querySelector('.tab1').className = "tab tab1" // tab1 删除 active
+                    } )
+				}
+        </script>
+    </body>
+
+</html>
