@@ -8,6 +8,7 @@
 out
 gen
 .gitignore
+.idea/*
 .idea/encodings.xml
 .idea/free-flex.iml
 .idea/modules.xml
