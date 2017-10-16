@@ -45,7 +45,7 @@
                 position: relative;
 				font-size: 24px;
 				font-weight: bold;
-				color: #d05;
+				color: #ea5890;
 			}
             .title-guide span:nth-child(2) > span {
                 position: absolute;
@@ -1112,8 +1112,8 @@
 
                     [].forEach.call(tab1, function( currentVal, index, arr ) {
                         currentVal.addEventListener('click', function (event) {
-                            console.log( index );
-                            console.log(this.parentNode.parentNode.querySelector('.show-code'));
+/*                            console.log( index );
+                            console.log(this.parentNode.parentNode.querySelector('.show-code'));*/
                             var showCode = this.parentNode.parentNode.querySelector('.show-code');
                             var preview = this.parentNode.parentNode.querySelector('.preview');
 
@@ -1128,8 +1128,8 @@
                     [].forEach.call(tab2, function( currentVal, index, arr ) {
 
                         currentVal.addEventListener('click', function (event) {
-                            console.log( index );
-                            console.log(this.parentNode.parentNode.querySelector('.preview'));
+/*                            console.log( index );
+                            console.log(this.parentNode.parentNode.querySelector('.preview'));*/
                             var showCode = this.parentNode.parentNode.querySelector('.show-code');
                             var preview = this.parentNode.parentNode.querySelector('.preview');
 
@@ -1156,7 +1156,7 @@
 					}
                 }
 
-                addLoadEvent(handleToggle);
+                addLoadEvent(handleToggle)
 
         </script>
     </body>
