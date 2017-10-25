@@ -9,7 +9,7 @@
 1. 轻巧、没有过度封装
 2. 实用、兼容老式设备：iOS 8.2+ Android 4.1+
 
-首页： [Free-Flex](http://www.kidsir.com/demo/free-flex/)
+首页： [Free-Flex](https://shishixu.github.io/free-flex/)
 
 free-flex.css :
 
