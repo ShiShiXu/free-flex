@@ -51,7 +51,6 @@ free-flex.css :
     width:100%;
     display:flex
 }
-
 .flex-row {
     -webkit-box-orient:horizontal;
     -webkit-box-direction:normal;
@@ -63,7 +62,6 @@ free-flex.css :
     -webkit-flex-direction:row-reverse;
     flex-direction:row-reverse
 }
-
 .flex-col {
     -webkit-box-direction:normal;
     -webkit-box-orient:vertical;
@@ -76,7 +74,6 @@ free-flex.css :
     -webkit-flex-direction:column-reverse;
     flex-direction:column-reverse
 }
-
 .flex-nowrap {
     -webkit-flex-wrap:nowrap;
     flex-wrap:nowrap
@@ -89,8 +86,6 @@ free-flex.css :
     -webkit-flex-wrap:wrap-reverse;
     flex-wrap:wrap-reverse
 }
-
-
 .main-start {
     -webkit-box-pack:start;
     -ms-flex-pack:start;
@@ -118,8 +113,6 @@ free-flex.css :
     -webkit-justify-content:space-between;
     justify-content:space-between
 }
-
-
 .cross-start {
     -webkit-box-align:start;
     -ms-flex-align:start;
@@ -150,8 +143,6 @@ free-flex.css :
     -webkit-align-items:baseline;
     align-items:baseline
 }
-
-
 .self-start {
     -webkit-align-self:flex-start;
     -ms-flex-item-align:start;
@@ -168,8 +159,6 @@ free-flex.css :
     -ms-flex-item-align:end;
     align-self:flex-end
 }
-
-
 .both-center {
     -webkit-box-align:center;
     -ms-flex-align:center;
@@ -190,8 +179,6 @@ free-flex.css :
     align-self:center;
     justify-self:center
 }
-
-
 .flex1, .flex2, .flex3, .flex4, .flex5, .flex6, 
 .flex7, .flex8, .flex9, .flex10, .flex11, .flex12 {
     display:-webkit-box;
@@ -283,125 +270,160 @@ free-flex.css :
     -ms-flex:12;
     flex:12
 }
-
-
 .flex-grow-1 {
+    -webkit-box-flex:1;
+    -ms-flex-positive:1;
     -webkit-flex-grow:1;
     flex-grow:1
 }
 .flex-grow-2 {
+    -webkit-box-flex:2;
+    -ms-flex-positive:2;
     -webkit-flex-grow:2;
     flex-grow:2
 }
 .flex-grow-3 {
+    -webkit-box-flex:3;
+    -ms-flex-positive:3;
     -webkit-flex-grow:3;
     flex-grow:3
 }
 .flex-grow-4 {
+    -webkit-box-flex:4;
+    -ms-flex-positive:4;
     -webkit-flex-grow:4;
     flex-grow:4
 }
 .flex-grow-5 {
+    -webkit-box-flex:5;
+    -ms-flex-positive:5;
     -webkit-flex-grow:5;
     flex-grow:5
 }
 .flex-grow-6 {
+    -webkit-box-flex:6;
+    -ms-flex-positive:6;
     -webkit-flex-grow:6;
     flex-grow:6
 }
 .flex-grow-7 {
+    -webkit-box-flex:7;
+    -ms-flex-positive:7;
     -webkit-flex-grow:7;
     flex-grow:7
 }
 .flex-grow-8 {
+    -webkit-box-flex:8;
+    -ms-flex-positive:8;
     -webkit-flex-grow:8;
     flex-grow:8
 }
 .flex-grow-9 {
+    -webkit-box-flex:9;
+    -ms-flex-positive:9;
     -webkit-flex-grow:9;
     flex-grow:9
 }
 .flex-grow-10 {
+    -webkit-box-flex:10;
+    -ms-flex-positive:10;
     -webkit-flex-grow:10;
     flex-grow:10
 }
 .flex-grow-11 {
+    -webkit-box-flex:11;
+    -ms-flex-positive:11;
     -webkit-flex-grow:11;
     flex-grow:11
 }
 .flex-grow-12 {
+    -webkit-box-flex:12;
+    -ms-flex-positive:12;
     -webkit-flex-grow:12;
     flex-grow:12
 }
-
-
 .flex-shrink-1 {
+    -ms-flex-negative:1;
     -webkit-flex-shrink:1;
     flex-shrink:1
 }
 .flex-shrink-2 {
+    -ms-flex-negative:2;
     -webkit-flex-shrink:2;
     flex-shrink:2
 }
 .flex-shrink-3 {
+    -ms-flex-negative:3;
     -webkit-flex-shrink:3;
     flex-shrink:3
 }
 .flex-shrink-4 {
+    -ms-flex-negative:4;
     -webkit-flex-shrink:4;
     flex-shrink:4
 }
 .flex-shrink-5 {
+    -ms-flex-negative:5;
     -webkit-flex-shrink:5;
     flex-shrink:5
 }
 .flex-shrink-6 {
+    -ms-flex-negative:6;
     -webkit-flex-shrink:6;
     flex-shrink:6
 }
 .flex-shrink-7 {
+    -ms-flex-negative:7;
     -webkit-flex-shrink:7;
     flex-shrink:7
 }
 .flex-shrink-8 {
+    -ms-flex-negative:8;
     -webkit-flex-shrink:8;
     flex-shrink:8
 }
 .flex-shrink-9 {
+    -ms-flex-negative:9;
     -webkit-flex-shrink:9;
     flex-shrink:9
 }
 .flex-shrink-10 {
+    -ms-flex-negative:10;
     -webkit-flex-shrink:10;
     flex-shrink:10
 }
 .flex-shrink-11 {
+    -ms-flex-negative:11;
     -webkit-flex-shrink:11;
     flex-shrink:11
 }
 .flex-shrink-12 {
+    -ms-flex-negative:12;
     -webkit-flex-shrink:12;
     flex-shrink:12
 }
-
-
 .content-start {
+    -ms-flex-line-pack:start;
     align-content:flex-start
 }
 .content-center {
+    -ms-flex-line-pack:center;
     align-content:center
 }
 .content-end {
+    -ms-flex-line-pack:end;
     align-content:flex-end
 }
 .content-between {
+    -ms-flex-line-pack:justify;
     align-content:space-between
 }
 .content-space-around {
+    -ms-flex-line-pack:distribute;
     align-content:space-around
 }
 .content-stretch {
+    -ms-flex-line-pack:stretch;
     align-content:stretch
 }
 ```
-
