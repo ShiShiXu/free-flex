@@ -106,7 +106,7 @@ body {
 .title-guide span:nth-child(2) > span {
     position: absolute;
     bottom: 2px;
-    right: -24px;
+    right: -40px;
     font-size: 14px;
     color: #999;
 }
