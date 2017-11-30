@@ -312,121 +312,139 @@
 
 /* 1、放大比例（当子容器比父容器小，子容器应当如何放大） */
 .flex-grow-1 { /* 1 单位 */
-    -webkit-flex-grow: 1;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
     flex-grow: 1;
 }
 .flex-grow-2 { /* 2 单位 */
-    -webkit-flex-grow: 2;
+    -webkit-box-flex: 2;
+    -ms-flex-positive: 2;
     flex-grow: 2;
 }
 .flex-grow-3 { /* 3 单位 */
-    -webkit-flex-grow: 3;
+    -webkit-box-flex: 3;
+    -ms-flex-positive: 3;
     flex-grow: 3;
 }
 .flex-grow-4 { /* 4 单位 */
-    -webkit-flex-grow: 4;
+    -webkit-box-flex: 4;
+    -ms-flex-positive: 4;
     flex-grow: 4;
 }
 .flex-grow-5 { /* 5 单位 */
-    -webkit-flex-grow: 5;
+    -webkit-box-flex: 5;
+    -ms-flex-positive: 5;
     flex-grow: 5;
 }
 .flex-grow-6 { /* 6 单位 */
-    -webkit-flex-grow: 6;
+    -webkit-box-flex: 6;
+    -ms-flex-positive: 6;
     flex-grow: 6;
 }
 .flex-grow-7 { /* 7 单位 */
-    -webkit-flex-grow: 7;
+    -webkit-box-flex: 7;
+    -ms-flex-positive: 7;
     flex-grow: 7;
 }
 .flex-grow-8 { /* 8 单位 */
-    -webkit-flex-grow: 8;
+    -webkit-box-flex: 8;
+    -ms-flex-positive: 8;
     flex-grow: 8;
 }
 .flex-grow-9 { /* 9 单位 */
-    -webkit-flex-grow: 9;
+    -webkit-box-flex: 9;
+    -ms-flex-positive: 9;
     flex-grow: 9;
 }
 .flex-grow-10 { /* 10 单位 */
-    -webkit-flex-grow: 10;
+    -webkit-box-flex: 10;
+    -ms-flex-positive: 10;
     flex-grow: 10;
 }
 .flex-grow-11 { /* 11 单位 */
-    -webkit-flex-grow: 11;
+    -webkit-box-flex: 11;
+    -ms-flex-positive: 11;
     flex-grow: 11;
 }
 
 .flex-grow-12 { /* 12 单位 */
-    -webkit-flex-grow: 12;
+    -webkit-box-flex: 12;
+    -ms-flex-positive: 12;
     flex-grow: 12;
 }
 
 /*  2、缩小比例（当子容器比父容器大，子容器应当如何缩小）*/
 .flex-shrink-1 { /* 1 单位 */
-    -webkit-flex-shrink: 1;
+    -ms-flex-negative: 1;
     flex-shrink: 1;
 }
 .flex-shrink-2 { /* 2 单位 */
-    -webkit-flex-shrink: 2;
+    -ms-flex-negative: 2;
     flex-shrink: 2;
 }
 .flex-shrink-3 { /* 3 单位 */
-    -webkit-flex-shrink: 3;
+    -ms-flex-negative: 3;
     flex-shrink: 3;
 }
 .flex-shrink-4 { /* 4 单位 */
-    -webkit-flex-shrink: 4;
+    -ms-flex-negative: 4;
     flex-shrink: 4;
 }
 .flex-shrink-5 { /* 5 单位 */
-    -webkit-flex-shrink: 5;
+    -ms-flex-negative: 5;
     flex-shrink: 5;
 }
 .flex-shrink-6 { /* 6 单位 */
-    -webkit-flex-shrink: 6;
+    -ms-flex-negative: 6;
     flex-shrink: 6;
 }
 .flex-shrink-7 { /* 7 单位 */
-    -webkit-flex-shrink: 7;
+    -ms-flex-negative: 7;
     flex-shrink: 7;
 }
 .flex-shrink-8 { /* 8 单位 */
-    -webkit-flex-shrink: 8;
+    -ms-flex-negative: 8;
     flex-shrink: 8;
 }
 .flex-shrink-9 { /* 9 单位 */
-    -webkit-flex-shrink: 9;
+    -ms-flex-negative: 9;
     flex-shrink: 9;
 }
 .flex-shrink-10 { /* 10 单位 */
-    -webkit-flex-shrink: 10;
+    -ms-flex-negative: 10;
     flex-shrink: 10;
 }
 .flex-shrink-11 { /* 11 单位 */
-    -webkit-flex-shrink: 11;
+    -ms-flex-negative: 11;
     flex-shrink: 11;
 }
 .flex-shrink-12 { /* 12 单位 */
-    -webkit-flex-shrink: 12;
+    -ms-flex-negative: 12;
     flex-shrink: 12;
 }
 
 /* 3、多列对齐：当伸缩容器的侧轴还有多余空间时，如何对齐 */
 .content-start { /* 开始 */
+    -ms-flex-line-pack: start;
     align-content: flex-start;
 }
 .content-center { /* 中间 */
+    -ms-flex-line-pack: center;
     align-content: center;
 }
 .content-end { /* 末尾 */
+    -ms-flex-line-pack:  end;
     align-content:  flex-end;
 }
 .content-between {/* 两端 */
+    -ms-flex-line-pack: justify;
     align-content: space-between;
 }
 .content-space-around { /* 围绕 */
+    -ms-flex-line-pack: distribute;
     align-content: space-around;
 }
 .content-stretch { /* 延伸 */
+    -ms-flex-line-pack: stretch;
     align-content: stretch;
 }
