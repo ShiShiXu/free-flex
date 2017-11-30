@@ -82,6 +82,16 @@ body {
     /*background: linear-gradient(rgb(225, 246, 253), rgba(247, 227, 227, 0.8));*/
     z-index: 100;
 }
+
+.title-animation {
+    transition: all .4s ease;
+}
+
+.title-guide.active {
+    transition: all .4s ease;
+    opacity: .2;
+    transform: translateY(-6px) scale(.8);
+}
 .title-guide span:nth-child(1){
     font-size: 24px;
     font-weight: bold;
@@ -307,6 +317,10 @@ code, .tips code {
 }
 
 .github {
+    margin-bottom: 6px;
+}
+
+.github a {
     width: 26px;
     height: 16px;
     padding-left: 10px;
