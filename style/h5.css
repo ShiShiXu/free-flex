@@ -211,7 +211,15 @@ pre code {
 
 .active {
     display: inline-block;
+    /*background-color: rgba(239, 246, 249, 1);*/
 }
+.tab1.active {
+    border-radius: 15px 0 15px 0;
+}
+.tab2.active {
+    border-radius:  0 15px 0 15px;
+}
+
 .tab.active::after  {
     position: absolute;
     bottom: -1px;
@@ -271,9 +279,9 @@ code, .tips code {
 .preview .flex > div, .preview > div > div {
     margin: 2px;
     padding: 8px;
-    background: rgba(239, 246, 249, 0.5);
+    background: rgba(255, 224, 236, 0.37);
     color: #999;
-    border: 1px solid rgba(229, 229, 229, 0.5);
+    border: 1px solid rgb(255, 225, 235);
     border-radius: 4px;
 }
 
