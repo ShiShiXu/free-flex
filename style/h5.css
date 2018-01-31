@@ -200,6 +200,7 @@ pre code {
     background: #f8f8f8;
     border-bottom: 1px solid #d1d1d1;
     height: 30px;
+    cursor: pointer;
 }
 .tab {
     position: relative;
@@ -382,9 +383,10 @@ img {
 }
 
 /* 禁止选中文本（如无文本选中需求，此为必选项） */
+/*
 html, body {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-}
+}*/

@@ -18,15 +18,15 @@
 		<div id="title-guide" class="title-guide">
 			<div class="title-animation">
 				<span> Free </span>
-				<span> Flex  <span> 1.1.1 </span> </span>
+				<span> Flex  <span> 2.0.0 </span> </span>
 			</div>
 		</div>
 
 
-		<div class="detail">
+		<!-- <div class="detail">
 			<span> iOS 8.2+ </span>
 			<span>Android 4.1+ </span>
-		</div>
+		</div> -->
 
 		<hr>
 
@@ -36,9 +36,10 @@
             <div class="tips">原味的感觉 ORZ</div>
             <div style="min-height: 180px;">
                 <div class="tabs">
-                    <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                    <span class="tab tab2 active">效果</span>
+                    <span class="tab tab1">HTML</span>
                 </div>
-                <div class="show-code">
+                <div class="show-code hide">
                     <pre>
                 <code>
     &lt;div&gt;
@@ -48,7 +49,7 @@
     &lt;/div&gt;</code>
                 </pre>
                 </div>
-                <div class="preview hide">
+                <div class="preview">
                     <div>
                         <div> 1 </div>
                         <div> 2 </div>
@@ -69,21 +70,22 @@
             <div class="tips"> 1、父容器上添加基础类 <code>.flex </code> </div>
                 <div style="min-height: 170px;">
                     <div class="tabs">
-                        <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                        <span class="tab tab2 active">效果</span>
+                        <span class="tab tab1">HTML</span>
                     </div>
 
-                    <div class="show-code">
+                    <div class="show-code hide">
                         <pre>
                     <code>
-    &lt;div class=&quot;<span class="highlight">flex</span>&quot;&gt;
+    &lt;div data-flex=&quot;<span class="highlight">flex</span>&quot;&gt;
         &lt;div&gt; 1 &lt;/div&gt;
         &lt;div&gt; 2 &lt;/div&gt;
         &lt;div&gt; 3 &lt;/div&gt;
     &lt;/div&gt;</code>
                         </pre>
                     </div>
-                    <div class="preview hide">
-                        <div class="flex">
+                    <div class="preview">
+                        <div data-flex="flex">
                             <div> 1 </div>
                             <div> 2 </div>
                             <div> 3 </div>
@@ -96,26 +98,27 @@
             <div class="tips"> 2、子项按比列分配 <code>.flex1</code> ... <code>.flex12</code> </div>
             <div style="min-height: 270px;">
                 <div class="tabs">
-                    <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                    <span class="tab tab2 active">效果</span>
+                    <span class="tab tab1">HTML</span>
                 </div>
-                <div class="show-code">
+                <div class="show-code hide">
                 <pre>
                 <code>
-    &lt;div class=&quot;flex&quot;&gt;
-        &lt;div class=&quot;<span class="highlight">flex1</span>&quot;&gt; 1 &lt;/div&gt;
-        &lt;div class=&quot;<span class="highlight">flex2</span>&quot;&gt; 2 &lt;/div&gt;
-        &lt;div class=&quot;<span class="highlight">flex3</span>&quot;&gt; 3 &lt;/div&gt;
+    &lt;div data-flex=&quot;flex&quot;&gt;
+        &lt;div data-flex=&quot;<span class="highlight">flex1</span>&quot;&gt; 1 &lt;/div&gt;
+        &lt;div data-flex=&quot;<span class="highlight">flex2</span>&quot;&gt; 2 &lt;/div&gt;
+        &lt;div data-flex=&quot;<span class="highlight">flex3</span>&quot;&gt; 3 &lt;/div&gt;
     &lt;/div&gt;</code>
                 </pre>
                 <pre>
                 <code>
-    &lt;div class=&quot;flex&quot;&gt;
-        &lt;div class=&quot;<span class="highlight">flex6</span>&quot;&gt; 6 &lt;/div&gt;
-        &lt;div class=&quot;<span class="highlight">flex12</span>&quot;&gt; 12 &lt;/div&gt;
+    &lt;div data-flex=&quot;flex&quot;&gt;
+        &lt;div data-flex=&quot;<span class="highlight">flex6</span>&quot;&gt; 6 &lt;/div&gt;
+        &lt;div data-flex=&quot;<span class="highlight">flex12</span>&quot;&gt; 12 &lt;/div&gt;
     &lt;/div&gt;</code>
                 </pre>
                 </div>
-                <div class="preview hide">
+                <div class="preview">
                     <div class="flex">
                         <div class="flex1"> 1 </div>
                         <div class="flex2"> 2 </div>
@@ -142,19 +145,20 @@
             <div class="tips"> 3、flex 主轴方向：水平——从【左】到【右】，起点在左边 <code> .flex-row </code> （默认） </div>
             <div  style="min-height: 150px;">
                 <div class="tabs">
-                    <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                        <span class="tab tab2 active">效果</span>
+                        <span class="tab tab1">HTML</span>
                 </div>
-                <div class="show-code">
+                <div class="show-code hide">
                 <pre>
                     <code>
-    &lt;div class=&quot;flex <span class="highlight">flex-row</span>&quot;&gt;
+    &lt;div data-flex=&quot;flex <span class="highlight">flex-row</span>&quot;&gt;
         &lt;div&gt; 1 &lt;/div&gt;
         &lt;div&gt; 2 &lt;/div&gt;
         &lt;div&gt; 3 &lt;/div&gt;
     &lt;/div&gt;</code>
                 </pre>
                 </div>
-                <div class="preview hide">
+                <div class="preview">
                     <div class="flex flex-row">
                         <div> 1 </div>
                         <div> 2 </div>
@@ -169,19 +173,20 @@
             <div class="tips"> 4、flex 主轴方向：水平——从【右】到【左】，起点在右边 <code> .flex-row-reverse </code> </div>
             <div style="min-height: 150px;">
                 <div class="tabs">
-                    <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                        <span class="tab tab2 active">效果</span>
+                        <span class="tab tab1">HTML</span>
                 </div>
-                <div class="show-code">
+                <div class="show-code hide">
                 <pre>
                 <code>
-    &lt;div class=&quot;flex <span class="highlight">flex-row-reverse</span>&quot;&gt;
+    &lt;div data-flex=&quot;flex <span class="highlight">flex-row-reverse</span>&quot;&gt;
         &lt;div&gt; 1 &lt;/div&gt;
         &lt;div&gt; 2 &lt;/div&gt;
         &lt;div&gt; 3 &lt;/div&gt;
     &lt;/div&gt;</code>
                 </pre>
                 </div>
-                <div class="preview hide">
+                <div class="preview">
                     <div class="flex flex-row-reverse">
                         <div> 1 </div>
                         <div> 2 </div>
@@ -195,19 +200,20 @@
             <div class="tips"> 5、flex 主轴方向：垂直——从【上】到【下】，起点在上方 <code> .flex-col </code> </div>
             <div  style="min-height: 210px;">
                 <div class="tabs">
-                    <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                        <span class="tab tab2 active">效果</span>
+                        <span class="tab tab1">HTML</span>
                 </div>
-                <div class="show-code">
+                <div class="show-code hide">
                 <pre>
                 <code>
-    &lt;div class=&quot;flex <span class="highlight">flex-col</span>&quot;&gt;
+    &lt;div data-flex=&quot;flex <span class="highlight">flex-col</span>&quot;&gt;
         &lt;div&gt; 1 &lt;/div&gt;
         &lt;div&gt; 2 &lt;/div&gt;
         &lt;div&gt; 3 &lt;/div&gt;
     &lt;/div&gt;</code>
                 </pre>
                 </div>
-                <div class="preview hide">
+                <div class="preview">
                     <div class="flex flex-col" style="height: 160px;">
                         <div> 1 </div>
                         <div> 2 </div>
@@ -221,19 +227,20 @@
             <div class="tips"> 6、flex 主轴方向：垂直——从【下】到【上】，起点在下方 <code> .flex-col-reverse </code> </div>
             <div  style="min-height: 210px;">
                 <div class="tabs">
-                    <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                        <span class="tab tab2 active">效果</span>
+                        <span class="tab tab1">HTML</span>
                 </div>
-                <div class="show-code">
+                <div class="show-code hide">
                 <pre>
                 <code>
-    &lt;div class=&quot;flex <span class="highlight">flex-col-reverse</span>&quot;&gt;
+    &lt;div data-flex=&quot;flex <span class="highlight">flex-col-reverse</span>&quot;&gt;
         &lt;div&gt; 1 &lt;/div&gt;
         &lt;div&gt; 2 &lt;/div&gt;
         &lt;div&gt; 3 &lt;/div&gt;
     &lt;/div&gt;</code>
                 </pre>
                 </div>
-                <div class="preview hide">
+                <div class="preview">
                     <div class="flex flex-col-reverse" style="height: 160px;">
                         <div> 1 </div>
                         <div> 2 </div>
@@ -248,13 +255,14 @@
 
             <div style="min-height: 230px;">
                 <div class="tabs">
-                    <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                        <span class="tab tab2 active">效果</span>
+                        <span class="tab tab1">HTML</span>
                 </div>
 
-                <div class="show-code">
+                <div class="show-code hide">
                 <pre>
                 <code>
-    &lt;div class=&quot;flex <span class="highlight">flex-nowrap</span>&quot;&gt;
+    &lt;div data-flex=&quot;flex <span class="highlight">flex-nowrap</span>&quot;&gt;
         &lt;div&gt; item 1 &lt;/div&gt;
         &lt;div&gt; item 2 &lt;/div&gt;
         &lt;div&gt; item 3 &lt;/div&gt;
@@ -266,7 +274,7 @@
     &lt;/div&gt;</code>
                 </pre>
                 </div>
-                <div class="preview hide">
+                <div class="preview">
                     <div class="flex flex-nowrap" style="max-width: 280px;background-color: rgba(220, 220, 220, .3);">
                         <div> item 1 </div>
                         <div> item 2 </div>
@@ -286,12 +294,13 @@
             <div class="tips"> 8、内容铺满是否换行：换行 <code>.flex-wrap </code> </div>
             <div style="min-height: 230px;">
                 <div class="tabs">
-                    <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                        <span class="tab tab2 active">效果</span>
+                        <span class="tab tab1">HTML</span>
                 </div>
-                <div class="show-code">
+                <div class="show-code hide">
                 <pre>
                 <code>
-    &lt;div class=&quot;flex <span class="highlight">flex-wrap</span>&quot;&gt;
+    &lt;div data-flex=&quot;flex <span class="highlight">flex-wrap</span>&quot;&gt;
         &lt;div&gt; item 1 &lt;/div&gt;
         &lt;div&gt; item 2 &lt;/div&gt;
         &lt;div&gt; item 3 &lt;/div&gt;
@@ -303,7 +312,7 @@
     &lt;/div&gt;</code>
                 </pre>
                 </div>
-                <div class="preview hide">
+                <div class="preview">
                     <div class="flex flex-wrap" style="max-width: 280px;background-color: rgba(220, 220, 220, .3);">
                         <div> item 1 </div>
                         <div> item 2 </div>
@@ -324,12 +333,13 @@
 
             <div style="min-height: 230px;">
                 <div class="tabs">
-                    <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                        <span class="tab tab2 active">效果</span>
+                        <span class="tab tab1">HTML</span>
                 </div>
-                <div class="show-code">
+                <div class="show-code hide">
                 <pre>
                 <code>
-    &lt;div class=&quot;flex <span class="highlight">flex-wrap-reverse</span>&quot;&gt;
+    &lt;div data-flex=&quot;flex <span class="highlight">flex-wrap-reverse</span>&quot;&gt;
         &lt;div&gt; item 1 &lt;/div&gt;
         &lt;div&gt; item 2 &lt;/div&gt;
         &lt;div&gt; item 3 &lt;/div&gt;
@@ -341,7 +351,7 @@
     &lt;/div&gt;</code>
                 </pre>
                 </div>
-                <div class="preview hide">
+                <div class="preview">
                     <div class="flex flex-wrap-reverse"  style="max-width: 280px;background-color: rgba(220, 220, 220, .3);">
                         <div> item 1 </div>
                         <div> item 2 </div>
@@ -367,33 +377,34 @@
             </div>
             <div style="min-height: 370px;">
                 <div class="tabs">
-                    <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                        <span class="tab tab2 active">效果</span>
+                        <span class="tab tab1">HTML</span>
                 </div>
-                <div class="show-code">
+                <div class="show-code hide">
                 <pre>
                 <code>
-    &lt;div class=&quot;flex <span class="highlight">main-start</span>&quot;&gt;
+    &lt;div data-flex=&quot;flex <span class="highlight">main-start</span>&quot;&gt;
         &lt;div&gt; main-start &lt;/div&gt;
     &lt;/div&gt;
 
-    &lt;div class=&quot;flex <span class="highlight">main-center</span>&quot;&gt;
+    &lt;div data-flex=&quot;flex <span class="highlight">main-center</span>&quot;&gt;
         &lt;div&gt; main-center &lt;/div&gt;
     &lt;/div&gt;
 
-    &lt;div class=&quot;flex <span class="highlight">main-end</span>&quot;&gt;
+    &lt;div data-flex=&quot;flex <span class="highlight">main-end</span>&quot;&gt;
         &lt;div&gt; main-end &lt;/div&gt;
     &lt;/div&gt;
 
-    &lt;div class=&quot;flex <span class="highlight">main-around</span>&quot;&gt;
+    &lt;div data-flex=&quot;flex <span class="highlight">main-around</span>&quot;&gt;
         &lt;div&gt; main-end &lt;/div&gt;
     &lt;/div&gt;
 
-    &lt;div class=&quot;flex <span class="highlight">main-between</span>&quot;&gt;
+    &lt;div data-flex=&quot;flex <span class="highlight">main-between</span>&quot;&gt;
         &lt;div&gt; main-end &lt;/div&gt;
     &lt;/div&gt;</code>
                 </pre>
                 </div>
-                <div class="preview hide">
+                <div class="preview">
                     <div class="flex main-start" style="background-color: rgba(220, 220, 220,.3);">
                         <div> main-start </div>
                     </div>
@@ -426,28 +437,29 @@
 
             <div style="min-height: 500px;">
                 <div class="tabs">
-                    <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                        <span class="tab tab2 active">效果</span>
+                        <span class="tab tab1">HTML</span>
                 </div>
-                <div class="show-code">
+                <div class="show-code hide">
                     <pre>
                     <code>
-    &lt;div class=&quot;flex <span class="highlight">cross-start</span>&quot;&gt;
+    &lt;div data-flex=&quot;flex <span class="highlight">cross-start</span>&quot;&gt;
         &lt;div&gt; cross-start &lt;/div&gt;
     &lt;/div&gt;
 
-    &lt;div class=&quot;flex <span class="highlight">cross-center</span>&quot;&gt;
+    &lt;div data-flex=&quot;flex <span class="highlight">cross-center</span>&quot;&gt;
         &lt;div&gt; cross-center &lt;/div&gt;
     &lt;/div&gt;
 
-    &lt;div class=&quot;flex <span class="highlight">cross-end</span>&quot;&gt;
+    &lt;div data-flex=&quot;flex <span class="highlight">cross-end</span>&quot;&gt;
         &lt;div&gt; cross-end &lt;/div&gt;
     &lt;/div&gt;
 
-    &lt;div class=&quot;flex <span class="highlight">cross-stretch</span>&quot;&gt;
+    &lt;div data-flex=&quot;flex <span class="highlight">cross-stretch</span>&quot;&gt;
         &lt;div&gt; cross-stretch &lt;/div&gt;
     &lt;/div&gt;
 
-   &lt;div class=&quot;flex <span class="highlight">cross-baseline</span>&quot;&gt;
+   &lt;div data-flex=&quot;flex <span class="highlight">cross-baseline</span>&quot;&gt;
         &lt;div style=&quot;font-size: 24px;&quot;&gt;
             font size 24
         &lt;/div&gt;
@@ -460,7 +472,7 @@
     &lt;/div&gt;</code>
                     </pre>
                 </div>
-                <div class="preview hide">
+                <div class="preview">
                     <div class="flex cross-start" style="height: 80px;background-color: rgba(220, 220, 220, .3);">
                         <div> cross-start </div>
                     </div>
@@ -495,31 +507,32 @@
             </div>
             <div style="min-height: 336px;">
                 <div class="tabs">
-                    <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                        <span class="tab tab2 active">效果</span>
+                        <span class="tab tab1">HTML</span>
                 </div>
-                <div class="show-code">
+                <div class="show-code hide">
                 <pre>
                 <code>
-    &lt;div class=&quot;flex&quot;&gt;
-        &lt;div class=&quot;<span class="highlight">self-start</span>&quot;&gt;
+    &lt;div data-flex=&quot;flex&quot;&gt;
+        &lt;div data-flex=&quot;<span class="highlight">self-start</span>&quot;&gt;
             self-start
         &lt;/div&gt;
     &lt;/div&gt;
 
-    &lt;div class=&quot;flex&quot;&gt;
-        &lt;div class=&quot;<span class="highlight">self-center</span>&quot;&gt;
+    &lt;div data-flex=&quot;flex&quot;&gt;
+        &lt;div data-flex=&quot;<span class="highlight">self-center</span>&quot;&gt;
             self-center
         &lt;/div&gt;
     &lt;/div&gt;
 
-    &lt;div class=&quot;flex&quot;&gt;
-        &lt;div class=&quot;<span class="highlight">self-end</span>&quot;&gt;
+    &lt;div data-flex=&quot;flex&quot;&gt;
+        &lt;div data-flex=&quot;<span class="highlight">self-end</span>&quot;&gt;
             self-end
         &lt;/div&gt;
     &lt;/div&gt;</code>
                 </pre>
                 </div>
-                <div class="preview hide">
+                <div class="preview">
                     <div class="flex" style="height: 80px;background-color: rgba(220, 220, 220, .3);">
                         <div class="self-start">
                             self-start
@@ -550,17 +563,18 @@
             </div>
             <div style="min-height: 120px;">
                 <div class="tabs">
-                    <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                        <span class="tab tab2 active">效果</span>
+                        <span class="tab tab1">HTML</span>
                 </div>
-                <div class="show-code">
+                <div class="show-code hide">
                     <pre>
                     <code>
-    &lt;div class=&quot;flex <span class="highlight">both-center</span>&quot;&gt;
+    &lt;div data-flex=&quot;flex <span class="highlight">both-center</span>&quot;&gt;
         &lt;div&gt; both-center &lt;/div&gt;
     &lt;/div&gt;</code>
                     </pre>
                 </div>
-                <div class="preview hide">
+                <div class="preview">
                     <div class="flex both-center cross-center" style="height: 80px;background-color: rgba(220, 220, 220, .3);">
                         <div> both-center </div>
                     </div>
@@ -582,13 +596,14 @@
             </div>
             <div style="min-height: 390px;">
                 <div class="tabs">
-                    <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                        <span class="tab tab2 active">效果</span>
+                        <span class="tab tab1">HTML</span>
                 </div>
-                <div class="show-code">
+                <div class="show-code hide">
                     <pre>
                 <code>
     添加前
-    &lt;div class=&quot;flex&quot; &gt;
+    &lt;div data-flex=&quot;flex&quot; &gt;
         &lt;div&gt; flex-grow-1 &lt;/div&gt;
         &lt;div&gt; flex-grow-2 &lt;/div&gt;
         &lt;div&gt; flex-grow-1 &lt;/div&gt;
@@ -597,20 +612,20 @@
                     <pre>
                     <code>
     添加后
-    &lt;div class=&quot;flex&quot;&gt;
-        &lt;div class=&quot;<span class="highlight">flex-grow-1</span>&quot;&gt;
+    &lt;div data-flex=&quot;flex&quot;&gt;
+        &lt;div data-flex=&quot;<span class="highlight">flex-grow-1</span>&quot;&gt;
             flex-grow-1
         &lt;/div&gt;
-        &lt;div class=&quot;<span class="highlight">flex-grow-2</span>&quot;&gt;
+        &lt;div data-flex=&quot;<span class="highlight">flex-grow-2</span>&quot;&gt;
             flex-grow-2
         &lt;/div&gt;
-        &lt;div class=&quot;<span class="highlight">flex-grow-1</span>&quot;&gt;
+        &lt;div data-flex=&quot;<span class="highlight">flex-grow-1</span>&quot;&gt;
             flex-grow-1
         &lt;/div&gt;
     &lt;/div&gt;</code>
                     </pre>
                 </div>
-                <div class="preview hide">
+                <div class="preview">
                     <div class="before"> 添加前 </div>
                     <div class="flex" style="width:280px;margin:2px auto 0;background-color: rgba(220, 220, 220, .3);">
                         <div style="width: 60px;margin: 0;"> flex-grow-1 </div>
@@ -647,13 +662,14 @@
             </div>
             <div style="min-height: 390px;">
                 <div class="tabs">
-                    <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                        <span class="tab tab2 active">效果</span>
+                        <span class="tab tab1">HTML</span>
                 </div>
-                <div class="show-code">
+                <div class="show-code hide">
                     <pre>
                 <code>
     添加前：
-    &lt;div class=&quot;flex&quot;&gt;
+    &lt;div data-flex=&quot;flex&quot;&gt;
         &lt;div&gt; flex-shrink-1 &lt;/div&gt;
         &lt;div&gt; flex-shrink-2 &lt;/div&gt;
         &lt;div&gt; flex-shrink-1 &lt;/div&gt;
@@ -662,20 +678,20 @@
                     <pre>
                 <code>
      添加后
-     &lt;div class=&quot;flex&quot;&gt;
-        &lt;div class=&quot;<span class="highlight">flex-shrink-1</span>&quot;&gt;
+     &lt;div data-flex=&quot;flex&quot;&gt;
+        &lt;div data-flex=&quot;<span class="highlight">flex-shrink-1</span>&quot;&gt;
             flex-shrink-1
         &lt;/div&gt;
-        &lt;div class=&quot;<span class="highlight">flex-shrink-2</span>&quot;&gt;
+        &lt;div data-flex=&quot;<span class="highlight">flex-shrink-2</span>&quot;&gt;
             flex-shrink-2
         &lt;/div&gt;
-        &lt;div class=&quot;<span class="highlight">flex-shrink-1</span>&quot;&gt;
+        &lt;div data-flex=&quot;<span class="highlight">flex-shrink-1</span>&quot;&gt;
             flex-shrink-1
         &lt;/div&gt;
     &lt;/div&gt;</code>
                     </pre>
                 </div>
-                <div class="preview hide">
+                <div class="preview">
                     <div class="before"> 添加前 </div>
                     <div class="flex" style="width:280px;margin:2px auto 0;background-color: rgba(220, 220, 220, .3);">
                         <div style="margin: 0;"> flex-shrink-1 </div>
@@ -715,49 +731,50 @@
 
             <div style="min-height: 500px;">
                 <div class="tabs">
-                    <span class="tab tab1 active">HTML</span><span class="tab tab2">效果</span>
+                        <span class="tab tab2 active">效果</span>
+                        <span class="tab tab1">HTML</span>
                 </div>
-                <div class="show-code">
+                <div class="show-code hide">
                     <pre>
                     <code>
-    &lt;div class=&quot;flex <span class="highlight">content-start</span>&quot;&gt;
+    &lt;div data-flex=&quot;flex <span class="highlight">content-start</span>&quot;&gt;
         &lt;div&gt; content-start &lt;/div&gt;
         ...
         &lt;div&gt; content-start &lt;/div&gt;
     &lt;/div&gt;
 
-    &lt;div class=&quot;flex <span class="highlight">content-center</span>&quot;&gt;
+    &lt;div data-flex=&quot;flex <span class="highlight">content-center</span>&quot;&gt;
         &lt;div&gt; content-center &lt;/div&gt;
         ...
         &lt;div&gt; content-center &lt;/div&gt;
     &lt;/div&gt;
 
-    &lt;div class=&quot;flex <span class="highlight">content-end</span>&quot;&gt;
+    &lt;div data-flex=&quot;flex <span class="highlight">content-end</span>&quot;&gt;
         &lt;div&gt; content-end &lt;/div&gt;
         ...
         &lt;div&gt; content-end &lt;/div&gt;
     &lt;/div&gt;
 
-    &lt;div class=&quot;flex <span class="highlight">content-stretch</span>&quot;&gt;
+    &lt;div data-flex=&quot;flex <span class="highlight">content-stretch</span>&quot;&gt;
         &lt;div&gt; content-stretch &lt;/div&gt;
         ...
         &lt;div&gt; content-stretch &lt;/div&gt;
     &lt;/div&gt;
 
-   &lt;div class=&quot;flex <span class="highlight">content-between</span>&quot;&gt;
+   &lt;div data-flex=&quot;flex <span class="highlight">content-between</span>&quot;&gt;
         &lt;div&quot;&gt; content-between &lt;/div&gt;
         ...
         &lt;div&quot;&gt; content-between &lt;/div&gt;
     &lt;/div&gt;
 
-    &lt;div class=&quot;flex <span class="highlight">content-space-around</span>&quot;&gt;
+    &lt;div data-flex=&quot;flex <span class="highlight">content-space-around</span>&quot;&gt;
         &lt;div&gt; content-space-around &lt;/div&gt;
         ...
         &lt;div&gt; content-space-around &lt;/div&gt;
     &lt;/div&gt;</code>
                     </pre>
                 </div>
-                <div class="preview hide">
+                <div class="preview">
                     <div class="flex flex-wrap content-start" style="max-width:280px;height:130px;margin:4px auto;background-color: rgba(220, 220, 220, .3);">
                         <div> content-start </div>
                         <div> content-start </div>
@@ -807,7 +824,7 @@
 					<img src="./images/github.svg" width="14" height="14">
 				</a>
 			</div>
-			&copy; 2017 <a href="http://www.kidsir.com" target="_blank"> 势仔仔 </a>
+			&copy; 2019 <a href="http://www.kidsir.com" target="_blank"> xushishi </a>
         </div>
 
         <script src="./js/fastclick.min.js"></script>
