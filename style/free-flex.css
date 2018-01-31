@@ -56,6 +56,16 @@
 }
 
 .flex-row { /*  3、flex 主轴方向：水平——从【左】到【右】，起点在左边 */
+    display: -webkit-box;
+    /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+    /* 老版本语法: Firefox (buggy) */
+    display: -ms-flexbox;
+    /* 混合版本语法: IE 10 */
+    /* 新版本语法: Chrome 21+ */
+    display: -webkit-flex;
+    /* 新版本语法: Opera 12.1, Firefox 22+ */
+    display: flex;
+
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -webkit-flex-direction: row;
@@ -64,11 +74,31 @@
 }
 
 .flex-row-reverse { /*  4、flex 主轴方向：水平——从【右】到【左】，起点在右边  */
+    display: -webkit-box;
+    /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+    /* 老版本语法: Firefox (buggy) */
+    display: -ms-flexbox;
+    /* 混合版本语法: IE 10 */
+    /* 新版本语法: Chrome 21+ */
+    display: -webkit-flex;
+    /* 新版本语法: Opera 12.1, Firefox 22+ */
+    display: flex;
+
     -webkit-flex-direction: row-reverse;
     flex-direction: row-reverse;
 }
 
 .flex-col { /*  5、flex 主轴方向：垂直——从【上】到【下】，起点在上方  */
+    display: -webkit-box;
+    /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+    /* 老版本语法: Firefox (buggy) */
+    display: -ms-flexbox;
+    /* 混合版本语法: IE 10 */
+    /* 新版本语法: Chrome 21+ */
+    display: -webkit-flex;
+    /* 新版本语法: Opera 12.1, Firefox 22+ */
+    display: flex;
+
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
     -webkit-flex-direction: column;
@@ -78,6 +108,16 @@
 }
 
 .flex-col-reverse { /*  6、flex 主轴方向：垂直——从【下】到【上】，起点在下方  */
+    display: -webkit-box;
+    /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+    /* 老版本语法: Firefox (buggy) */
+    display: -ms-flexbox;
+    /* 混合版本语法: IE 10 */
+    /* 新版本语法: Chrome 21+ */
+    display: -webkit-flex;
+    /* 新版本语法: Opera 12.1, Firefox 22+ */
+    display: flex;
+
     -webkit-flex-direction: column-reverse;
     flex-direction: column-reverse;
 }
