@@ -288,7 +288,7 @@
                     </div>
                 </div>
             </div>
-            <div class="by-the-way"> 贴士：本例设置了 max-width: 280px 和 overflow: hidden，大屏用户可以更容易看到 nowrap 的效果 </div>
+            <div class="by-the-way"> 贴士：本例设置了 max-width: 280px 和 overflow: hidden，添加 flex-nowrap 时，部分子项超出容器、被隐藏 </div>
 		</div>
 
 		<div class="box">
@@ -326,7 +326,7 @@
                     </div>
                 </div>
             </div>
-            <div class="by-the-way"> 贴士：本例设置了 max-width: 280px 和 overflow: hidden，大屏用户可以更容易看到 wrap 的效果 </div>
+            <div class="by-the-way"> 贴士：本例设置了 max-width: 280px 和 overflow: hidden，添加 flex-wrap 时，子项被换行显示 </div>
 		</div>
 
 		<div class="box">
@@ -365,7 +365,7 @@
                     </div>
                 </div>
             </div>
-            <div class="by-the-way"> 贴士：本例设置了 max-width: 280px，大屏用户可以更容易看到 flex-wrap-reverse 效果 </div>
+            <div class="by-the-way"> 贴士：本例设置了 max-width: 280px，可以更容易看到 flex-wrap-reverse 效果 </div>
 		</div>
 
 		<div class="box">
@@ -425,6 +425,7 @@
                     </div>
                 </div>
             </div>
+            <div class="by-the-way"> 贴士：当使用 flex-col 或者 flex-col-reverse 改变主轴方向后，此时的主轴变成垂直线，侧轴变水平线。这点需要注意  </div>
 		</div>
 
 		<div class="box">
@@ -551,7 +552,7 @@
                     </div>
                 </div>
             </div>
-            <div class="by-the-way"> 和上例
+            <div class="by-the-way"> 贴士：和上例
                 <code> cross-start </code>
                 <code> cross-center </code>
                 <code> cross-end </code> 效果一样
@@ -586,7 +587,7 @@
         <div class="section">
             <span class="section-free"> Free </span>
             <span class="section-flex"> Flex </span>
-            高级
+            进阶
         </div>
 
         <div class="box">
@@ -642,7 +643,7 @@
                     </div>
                 </div>
             </div>
-            <div class="by-the-way">  计算方法：<br>
+            <div class="by-the-way"> 计算方法：<br>
                 本例设置容器宽 280px，每个子元素宽 60px <br>
                 父容器有剩余：<br>
                 280 - ( 60 + 60 + 60 ) = 100 px ; <br>
@@ -652,7 +653,7 @@
                 ( 60 + 25 )px 、 ( 60 + 25*2 )px 和 ( 60 + 25 )px , 总共刚好 280 px <br>
                 具体请 Chrome Developer Tools 看一下
             </div>
-            <div class="by-the-way"> 目前拥有12种属性值，flex-grow-1 ... flex-grow-12  </div>
+            <div class="by-the-way"> 贴士：目前拥有12种属性值，flex-grow-1 ... flex-grow-12  </div>
         </div>
 
         <div class="box">
@@ -707,7 +708,7 @@
                     </div>
                 </div>
             </div>
-            <div class="by-the-way">  计算方法：<br>
+            <div class="by-the-way"> 计算方法：<br>
                 本例设置容器宽 280px，每个子元素宽 120px <br>
                 子容器超出父容器： <br>
                 ( 120 + 120 + 120 ) - 280 = 80 px ; <br>
@@ -717,7 +718,7 @@
                 ( 120 - 20 )px 、 ( 120 - 20*2 )px 和 ( 120 - 20 )px ,  总共刚好 280px  <br>
                 具体请 Chrome Developer Tools 看一下
             </div>
-            <div class="by-the-way"> 目前拥有12种属性值，flex-shrink-1 ... flex-shrink-12  </div>
+            <div class="by-the-way"> 贴士：目前拥有12种属性值，flex-shrink-1 ... flex-shrink-12  </div>
         </div>
 
         <div class="box">
@@ -814,7 +815,7 @@
                     </div>
                 </div>
             </div>
-            <div class="by-the-way"> Tips：本例设置了父容器最大宽度 280px，大屏幕用户更容易看到效果。<br>
+            <div class="by-the-way"> 贴士：本例设置了父容器最大宽度 280px，大屏幕用户更容易看到效果。<br>
                 含 content-* 的类会在元素上添加相应的 align-content 属性和值， 但 align-content在只有一行的伸缩容器上没有效果，所以本例同时加上 flex-wrap 让子元素换行。  </div>
         </div>
 
